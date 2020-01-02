@@ -1,6 +1,6 @@
 var app = angular.module('myApp', ['ngRoute']);
 
-app.config(function ($routeProvider) {
+app.config(function ($routeProvider, $locationProvider) {
     $routeProvider
         .when("/", {
             templateUrl: "views/main.html"
@@ -14,5 +14,5 @@ app.config(function ($routeProvider) {
         .otherwise({
             redirectTo: '/'
         });
-    // $locationProvider.html5Mode(true);
+    $locationProvider.html5Mode(true);
 });
