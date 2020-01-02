@@ -1,9 +1,18 @@
-var app = angular.module("myApp", []);
+var app = angular.module('myApp', ['ngRoute']);
 
-// $(document).ready(function () {  
-//     $('[data-toggle="popover"]').popover();  
-// }); 
-
-$(function () {
-    $('[data-toggle="popover"]').popover()
-})
+app.config(function ($routeProvider, $locationProvider) {
+    $routeProvider
+        .when("/", {
+            templateUrl: "main.html"
+        })
+        .when("/list", {
+            templateUrl: "list.html"
+        })
+        .when("/create", {
+            templateUrl: "create.html"
+        })
+        .otherwise({
+            redirectTo: '/'
+        });
+    $locationProvider.html5Mode(true);
+});
