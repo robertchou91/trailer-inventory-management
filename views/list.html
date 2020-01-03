@@ -3,20 +3,28 @@
     <table class="table">
         <thead class="thead-dark">
             <tr>
-                <th scope="col">Name</th>
+                <th scope="col">Model Number</th>
                 <th scope="col">Dimensions</th>
-                <th scope="col">Size</th>
-                <th scope="col">Style</th>
+                <th scope="col">Year</th>
+                <th scope="col">Color</th>
+                <th scope="col">Payload</th>
+                <th scope="col">Price</th>
+                <th scope="col">Manufacturer</th>
                 <th scope="col">Condition</th>
+                <th scope="col">Quantity</th>
             </tr>
         </thead>
         <tbody>
             <tr ng-repeat = "trailer in trailers | filter:searchText">
-                <td scope="row">{{trailer.name}}</td>
+                <td>{{trailer.modelnumber}}</td>
                 <td>{{trailer.dimension}}</td>
-                <td>{{trailer.size}}</td>
-                <td>{{trailer.style}}</td>
+                <td>{{trailer.year}}</td>
+                <td>{{trailer.color}}</td>
+                <td>{{trailer.payload}}</td>
+                <td>{{trailer.price}}</td>
+                <td>{{trailer.manufacturer}}</td>
                 <td>{{trailer.condition}}</td>
+                <td>{{trailer.quantity}}</td>
             </tr>
         </tbody>
     </table>
