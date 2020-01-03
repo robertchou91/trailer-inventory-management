@@ -1,5 +1,14 @@
 <div class="container" ng-controller="listController" >
     <label>Search: <input ng-model="searchText"></label>
+    <label>Manufacturer </label>
+    <select  ng-model="manufacturerList"> 
+        <option ng-repeat= "trailer in trailers" value="None">{{trailer.manufacturer}}</option>
+    </select>
+    <select  ng-model="conditionList"> 
+        <option value="new"> New </option>
+        <option value="used"> Used </option>
+        <option value="damaged"> Damaged </option>
+    </select>
     <table class="table">
         <thead class="thead-dark">
             <tr>
@@ -18,7 +27,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat = "trailer in trailers | filter:searchText">
+            <tr ng-repeat = "trailer in trailers | filter:searchText | filter:conditionList">
                 <td>{{trailer.title}}</td>
                 <td><img class="img-thumbnail" src="" alt="Trailer Image" /></td>
                 <td>{{trailer.model}}</td>

@@ -23,6 +23,10 @@ app.controller('listController', function ($scope, $http) {
         });
     };
 
-
+    $scope.conditions = [
+        {"condition" : "new"},
+        {"condition" : "used"},
+        {"condition" : "damaged"},
+    ];
 
 });
