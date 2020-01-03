@@ -14,6 +14,7 @@
                 <th>Condition</th>
                 <th>Price</th>
                 <th>Quantity</th>
+                <th>Options</th>
             </tr>
         </thead>
         <tbody>
@@ -29,6 +30,7 @@
                 <td>{{trailer.condition}}</td>
                 <td>{{trailer.price}}</td>
                 <td>{{trailer.quantity}}</td>
+                <td><a href="" ng-click="delete(trailer._id)">Delete</a></td>
             </tr>
         </tbody>
     </table>
