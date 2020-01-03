@@ -3,8 +3,11 @@ app.controller('listController', function($scope, $http) {
     $http.get("https://cargo-trailer-server.herokuapp.com/api/trailers")
         .then(function(response) {
             console.log(response.data);
+            console.log("Successfully got Trailers");
             $scope.trailers = response.data; 
-        })
+        }, function(response) {
+            console.log("Unable to get Trailers");
+        });
     // $scope.trailers = [
     //     {id: 1, modelnumber: 800800, dimension: '0x0x0', year: 1991, color: 'color1', payload: '100lbs', price: '$400', manufacturer: 'China', condition: 'BAD', quantity: 1},
     //     {id: 2, modelnumber: 812812, dimension: '1x1x1', year: 1993, color: 'color2', payload: '200lbs', price: '$300', manufacturer: 'Japan', condition: 'GOOD', quantity: 5},
