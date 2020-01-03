@@ -3,29 +3,31 @@
     <table class="table">
         <thead class="thead-dark">
             <tr>
-                <th>Model Number</th>
+                <th>Title</th>
                 <th>Image</th>
+                <th>Model Number</th>
                 <th>Dimensions</th>
                 <th>Year</th>
                 <th>Color</th>
                 <th>Payload</th>
-                <th>Price</th>
                 <th>Manufacturer</th>
                 <th>Condition</th>
+                <th>Price</th>
                 <th>Quantity</th>
             </tr>
         </thead>
         <tbody>
             <tr ng-repeat = "trailer in trailers | filter:searchText">
-                <td>{{trailer.modelnumber}}</td>
+                <td>{{trailer.title}}</td>
                 <td><img class="img-thumbnail" src="" alt="Trailer Image" /></td>
+                <td>{{trailer.model}}</td>
                 <td>{{trailer.dimension}}</td>
                 <td>{{trailer.year}}</td>
                 <td>{{trailer.color}}</td>
-                <td>{{trailer.payload}}</td>
-                <td>{{trailer.price}}</td>
+                <td>{{trailer.capacity}}</td>
                 <td>{{trailer.manufacturer}}</td>
                 <td>{{trailer.condition}}</td>
+                <td>{{trailer.price}}</td>
                 <td>{{trailer.quantity}}</td>
             </tr>
         </tbody>
