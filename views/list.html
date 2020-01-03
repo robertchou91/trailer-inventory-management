@@ -3,20 +3,22 @@
     <table class="table">
         <thead class="thead-dark">
             <tr>
-                <th scope="col">Model Number</th>
-                <th scope="col">Dimensions</th>
-                <th scope="col">Year</th>
-                <th scope="col">Color</th>
-                <th scope="col">Payload</th>
-                <th scope="col">Price</th>
-                <th scope="col">Manufacturer</th>
-                <th scope="col">Condition</th>
-                <th scope="col">Quantity</th>
+                <th>Model Number</th>
+                <th>Image</th>
+                <th>Dimensions</th>
+                <th>Year</th>
+                <th>Color</th>
+                <th>Payload</th>
+                <th>Price</th>
+                <th>Manufacturer</th>
+                <th>Condition</th>
+                <th>Quantity</th>
             </tr>
         </thead>
         <tbody>
             <tr ng-repeat = "trailer in trailers | filter:searchText">
                 <td>{{trailer.modelnumber}}</td>
+                <td><img class="img-thumbnail" src="" alt="Trailer Image" /></td>
                 <td>{{trailer.dimension}}</td>
                 <td>{{trailer.year}}</td>
                 <td>{{trailer.color}}</td>
