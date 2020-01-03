@@ -9,16 +9,20 @@ app.controller('listController', function ($scope, $http) {
             console.log("Unable to get Trailers");
         });
 
-    $scope.delete = function (object) {
+    $scope.delete = function (id) {
         $http({
-            url: 'https://cargo-trailer-server.herokuapp.com/api/trailers/' + object.id,
+            url: 'https://cargo-trailer-server.herokuapp.com/api/trailers/' + id,
             method: 'DELETE',
         }).then(function (res) {
             console.log(res.data);
             console.log("trailer deleted");
+            $scope.trailers.splice(id,1);
         }, function (error) {
             console.log(error);
             console.log("trailer not deleted");
         });
     };
+
+
+
 });
