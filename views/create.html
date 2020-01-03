@@ -1,21 +1,85 @@
 
-<div class="container">
-    <form action = "action_page.php">
-    <div class = "dimensions">
-    <label for ="dimensions">Dimensions:</label>
-    <input type = "text" class ="form-control" id = "dimensions">
-</div>
-<div class = "size">
-    <label for ="size">Size(volume):</label>
-    <input type = "text" class ="form-control" id = "size">
+<div class="container" style = "margin: 0;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);">
+<form action = "action_page.php">
+    <div class = "model-number">
+        <label for ="model-number">Model Number:</label>
+        <input type = "text" class ="form-control" id = "model-number">
     </div>
-    <div class = "style">
-        <label for ="style">Style:</label>
-        <input type = "text" class ="form-control" id = "style">
+    <br>
+    
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="inputGroupSelect01">Condition</label>
         </div>
-<div class = "condition">
-    <label class="checkbox-inline"><input type="checkbox" value="">Option 1</label>
-    <label class="checkbox-inline"><input type="checkbox" value="">Option 2</label>
-    <label class="checkbox-inline"><input type="checkbox" value="">Option 3</label>
-</div>
+        <select class="condition" id="condition">
+          <option value="1">New</option>
+          <option value="2">Preowned/Used</option>
+        </select>
+      </div>
+      
+      <div class = "year">
+        <label for ="year">Year:</label>
+        <input type = "text" class ="form-control" id = "year">
+      </div>
 
+      <div class = "color">
+        <label for ="color">Color:</label>
+        <input type = "text" class ="form-control" id = "color">
+      </div> 
+
+      
+      <div class = "payload-capacity">
+        <label for ="payload-capacity">Payload Capacity:</label>
+        <input type = "text" class ="form-control" id = "payload-capacity">
+      </div> 
+<br>
+      
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Amount :$</span>
+        </div>
+        <input type="text" class="form-control" aria-label="Amount">
+      </div> 
+<br>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="inputGroupSelect01">Dimensions</label>
+        </div>
+        <select class="dimensions" id="dimensions">
+            <option value="one">1x1x1</option>
+            <option value="two">2x2x2</option>
+          <option value="three">3x3x3</option>
+          <option value="four">4x4x4</option>
+        </select>
+      </div>
+<br>
+<div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <label class="input-group-text" for="inputGroupSelect01">Manufacturer</label>
+    </div>
+    <select class="manufacturer" id="manufacturer">
+        <option value="aluma">Aluma</option>
+        <option value="forestriver">Forest River</option>
+      <option value="bigtex">Big Tex</option>
+      <option value="freedomtrailers">Freedom Trailers</option>
+    </select>
+  </div>
+
+  <div class = "quantity">
+    <label for ="quantity">Quantity:</label>
+    <input type = "text" class ="form-control" id = "quantity">
+  </div> 
+<br>
+        <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroupFileAddon01">Upload Image</span>
+            </div>
+            <div class="custom-file">
+              <input type="file" class="custom-file-input" id="inputGroupFile01"
+                aria-describedby="inputGroupFileAddon01">
+              <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+            </div>
