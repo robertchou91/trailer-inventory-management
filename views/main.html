@@ -1,11 +1,11 @@
-<div class="container">
-    <form class="text-center" action="">
-        First name:<br />
-        <input type="text" name="firstname" />
+<div class="container" ng-app="login" ng-controller="logincontrol">
+    <form class="text-center">
+        username:<br />
+        <input type="text" name="username" ng-model="username"/>
         <br />
-        Last name:<br />
-        <input type="text" name="lastname" />
-        <br /><br />
-        <input type="submit" />
+        password:<br />
+        <input type="text" name="password" ng-model="password"/>
+        <br/><br />
+        <button ng-click="submit()">Submit</button>
     </form>
 </div>

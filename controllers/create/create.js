@@ -1,4 +1,4 @@
-app.controller("myCreate", function($scope,$http) {
+app.controller("myCreate", function($scope,$http,$window) {
    $scope.submit= function(){
       var data = {
         
@@ -25,6 +25,8 @@ app.controller("myCreate", function($scope,$http) {
         console.log($scope.msg)
         console.log(response.status)
         console.log(response.data)
+        $window.location.href = '#!/list'
+
    })
 }
 });
