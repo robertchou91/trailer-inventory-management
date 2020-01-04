@@ -1,14 +1,49 @@
-<div class="container" ng-controller="listController" >
+<div class="container" ng-controller="listController" ng-cloak="" class="sliderdemoBasicUsage" ng-app="MyApp">
     <label>Search: <input ng-model="searchText"></label>
-    <label>Manufacturer </label>
-    <select  ng-model="manufacturerList"> 
-        <option ng-repeat= "trailer in trailers" value="None">{{trailer.manufacturer}}</option>
-    </select>
-    <select  ng-model="conditionList"> 
-        <option value="new"> New </option>
-        <option value="used"> Used </option>
-        <option value="damaged"> Damaged </option>
-    </select>
+
+    <label> Manufacturer 
+        <select  ng-model="manufacturerList">  
+            <option value="Arising">Arising</option>
+            <option value="Big Tex Trailers">Big Tex Trailers</option>
+            <option value="Little Tex Trailers">Little Tex Trailers</option>
+        </select>
+    </label>
+
+
+    <label> Condition 
+        <select  ng-model="conditionList"> 
+            <option value="New">New</option>
+            <option value="Used">Used</option>
+            <option value="Cosmetic Damage">Cosmetic Damage</option>
+        </select>
+    </label>   
+
+    <label> Size 
+        <select  ng-model="sizeList"> 
+            <option value="6X12">Small</option>
+            <option value="7X14">Medium</option>
+            <option value="8.5X16">Large</option>
+            <option value="8.5X24">Extra Large</option>
+        </select>
+    </label>   
+
+    <label> Year 
+        <select  ng-model="yearList"> 
+            <option value="2018">2018</option>
+            <option value="2019">2019</option>
+            <option value="2020">2020</option>
+        </select>
+    </label>   
+
+ <!-- HTML SLIDER (not filtering)     -->
+    <label> Price
+        <input type="range" min="0" max="100000" value="50" class="slider" id="myRange">
+    </label> 
+    
+    <label>
+        <p>$ <span id="demo"></span></p>
+    </label>
+
     <table class="table">
         <thead class="thead-dark">
             <tr>
@@ -27,7 +62,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat = "trailer in trailers | filter:searchText | filter:conditionList">
+            <tr ng-repeat = "trailer in trailers | filter:searchText | filter:conditionList | filter:manufacturerList | startFrom:pagination.currentPage*pagination.pageSize | limitTo:pagination.pageSize">
                 <td>{{trailer.title}}</td>
                 <td><img class="img-thumbnail" src="" alt="Trailer Image" /></td>
                 <td>{{trailer.model}}</td>
@@ -43,6 +78,13 @@
             </tr>
         </tbody>
     </table>
+    <select ng-model="pagination.pageSize">
+        <option value="5" selected="selected">5</option>
+        <option value="10">10</option>
+        <option value="20">20</option>
+    </select>
+    <button ng-disabled="pagination.currentPage == 0" ng-click="pagination.currentPage=pagination.currentPage-1">Previous</button>{{pagination.currentPage+1}}/{{pagination.numberOfPages()}}
+    <button ng-disabled="pagination.currentPage >= trailers.length/pagination.pageSize - 1" ng-click="pagination.currentPage=pagination.currentPage+1">Next</button>
+
+
 </div>
-
-
