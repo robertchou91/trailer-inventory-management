@@ -1,4 +1,5 @@
 app.controller('listController', function ($scope, $http) {
+    $scope.trailers = [];
 
     $http.get("https://cargo-trailer-server.herokuapp.com/api/trailers")
         .then(function (response) {
@@ -53,7 +54,6 @@ app.controller('listController', function ($scope, $http) {
         { "year": "2020" },
     ];
 
-
     $scope.pagination = {
         currentPage: 0,
         pageSize: 5,
@@ -62,7 +62,10 @@ app.controller('listController', function ($scope, $http) {
         }
     };
 
+
+
 });
+
 
 app.filter('startFrom', function () {
     if (typeof input === undefined) {
