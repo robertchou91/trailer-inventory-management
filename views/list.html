@@ -38,23 +38,6 @@
         </select>
     </label>
 
-    <!-- HTML SLIDER (not filtering)     -->
-    <label>
-        Price
-        <input
-            type="range"
-            min="0"
-            max="100000"
-            value="50"
-            class="slider"
-            id="myRange"
-        />
-    </label>
-
-    <label>
-        <p>$ <span id="demo"></span></p>
-    </label>
-
     <table class="table">
         <thead class="thead-dark">
             <tr>
@@ -74,7 +57,7 @@
         </thead>
         <tbody>
             <tr
-                ng-repeat="trailer in trailers | filter:searchText | filter:conditionList | filter:manufacturerList | filter:yearList | startFrom:pagination.currentPage*pagination.pageSize | limitTo:pagination.pageSize"
+                ng-repeat="trailer in trailers | filter:searchText | filter:conditionList | filter:manufacturerList | filter:yearList | filter:priceList | startFrom:pagination.currentPage*pagination.pageSize | limitTo:pagination.pageSize"
             >
                 <td>{{trailer.title}}</td>
                 <td>
