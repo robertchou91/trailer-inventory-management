@@ -2,7 +2,6 @@ app.controller('listController', function ($scope, $http) {
 
     $http.get("https://cargo-trailer-server.herokuapp.com/api/trailers")
         .then(function (response) {
-            console.log(response.data);
             console.log("Successfully got Trailers");
             $scope.trailers = response.data;
         }, function (response) {
@@ -13,15 +12,21 @@ app.controller('listController', function ($scope, $http) {
         $http({
             url: 'https://cargo-trailer-server.herokuapp.com/api/trailers/' + id,
             method: 'DELETE',
-        }).then(function (res) {
-            console.log(res.data);
+        }).then(function (response) {
             console.log("trailer deleted");
-            $scope.trailers.splice(id,1);
+            $scope.refresh();
         }, function (error) {
             console.log(error);
             console.log("trailer not deleted");
         });
     };
+
+    $scope.refresh = function(){
+        $http.get('https://cargo-trailer-server.herokuapp.com/api/trailers/')
+              .then(function(response){
+                   $scope.trailers = response.data;
+              });
+    }
 
     $scope.conditions = [
         {"condition" : "new"},
