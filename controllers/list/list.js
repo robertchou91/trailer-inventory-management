@@ -1,12 +1,13 @@
 app.controller('listController', function ($scope, $http) {
+    $scope.trailers = [];
 
-   $http.get("https://cargo-trailer-server.herokuapp.com/api/trailers")
+    $http.get("https://cargo-trailer-server.herokuapp.com/api/trailers")
         .then(function (response) {
             console.log("Successfully got Trailers");
             $scope.trailers = response.data;
         }, function (response) {
             console.log("Unable to get Trailers");
-        }); 
+        });
 
     $scope.delete = function (id) {
         $http({
@@ -21,17 +22,58 @@ app.controller('listController', function ($scope, $http) {
         });
     };
 
-    $scope.refresh = function(){
+    $scope.refresh = function () {
         $http.get('https://cargo-trailer-server.herokuapp.com/api/trailers/')
-              .then(function(response){
-                   $scope.trailers = response.data;
-              });
+            .then(function (response) {
+                $scope.trailers = response.data;
+            });
     }
 
-    $scope.conditions = [
-        {"condition" : "new"},
-        {"condition" : "used"},
-        {"condition" : "damaged"},
+    $scope.Manufacturer = [
+        { "manufacturer": "Arising" },
+        { "manufacturer": "Big Tex Trailers" },
+        { "manufacturer": "Little Tex Trailers" },
     ];
 
+    $scope.conditions = [
+        { "condition": "New" },
+        { "condition": "Used" },
+        { "condition": "Cosmetic Damage" },
+    ];
+
+    $scope.size = [
+        { "dimension": "6X12" },
+        { "dimension": "7X14" },
+        { "dimension": "8.5X16" },
+        { "dimension": "8.5X24" },
+    ];
+
+    $scope.years = [
+        { "year": "2018" },
+        { "year": "2019" },
+        { "year": "2020" },
+    ];
+
+    $scope.pagination = {
+        currentPage: 0,
+        pageSize: 5,
+        numberOfPages: function () {
+            return Math.ceil($scope.trailers.length / $scope.pagination.pageSize);
+        }
+    };
+
+
+
+});
+
+
+app.filter('startFrom', function () {
+    if (typeof input === undefined) {
+        return null;
+    } else {
+        return function (input, start) {
+            start = +start; //parse to int
+            return input.slice(start);
+        }
+    }
 });
