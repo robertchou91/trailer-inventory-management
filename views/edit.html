@@ -3,12 +3,13 @@
 position: absolute;
 top: 50%;
 left: 50%;
-transform: translate(-50%, -50%);" >
+transform: translate(-50%, -50%);" ng-app="editpage" ng-controller="editController" >
+
 
 <form>
     <div class = "model-number">
         <label for ="model-number">Model Number:</label>
-        <input type="text" class="form-control" id="model-number" ng-model="model">
+        <input type="text" class="form-control" id="model-number" ng-model="modelnum" my-model-value = "{{trailer.model}}" >
     </div>
     <br>
     
@@ -16,7 +17,7 @@ transform: translate(-50%, -50%);" >
         <div class="input-group-prepend">
           <label class="input-group-text" for="inputGroupSelect01">Condition</label>
         </div>
-        <select class="condition" id="condition" ng-model="condition">
+        <select class="condition" id="condition" my-model-value = "{{trailer.condition}}" ng-model="condition">
           <option value="1">New</option>
           <option value="2">Preowned/Used</option>
         </select>
@@ -24,18 +25,18 @@ transform: translate(-50%, -50%);" >
       
       <div class = "year">
         <label for ="year">Year:</label>
-        <input type = "text" class ="form-control" id = "year" ng-model="year">
+        <input type = "text" class ="form-control" id = "year" my-model-value = "{{trailer.year}}" ng-model="year">
       </div>
 
       <div class = "color">
         <label for ="color">Color:</label>
-        <input type = "text" class ="form-control" id = "color" ng-model="color">
+        <input type = "text" class ="form-control" id = "color" ng-model="color" my-model-value = "{{trailer.color}}">
       </div> 
 
       
       <div class = "payload-capacity">
         <label for ="payload-capacity">Payload Capacity:</label>
-        <input type = "text" class ="form-control" id = "payload-capacity" ng-model="payload">
+        <input type = "text" class ="form-control" id = "payload-capacity" ng-model="payload" my-model-value = "{{trailer.capacity}}">
       </div> 
 <br>
       
@@ -43,14 +44,14 @@ transform: translate(-50%, -50%);" >
         <div class="input-group-prepend">
           <span class="input-group-text">Amount :$</span>
         </div>
-        <input type="text" class="form-control" aria-label="Amount" ng-model="amount">
+        <input type="text" class="form-control" aria-label="Amount" my-model-value = "{{trailer.price}}" ng-model="amount">
       </div> 
 <br>
       <div class="input-group mb-3">
         <div class="input-group-prepend">
           <label class="input-group-text" for="inputGroupSelect01">Dimensions</label>
         </div>
-        <select class="dimensions" id="dimensions" ng-model="dimension">
+        <select class="dimensions" id="dimensions" my-model-value = "{{trailer.dimension}}" ng-model="dimension">
             <option value="one">1x1x1</option>
             <option value="two">2x2x2</option>
           <option value="three">3x3x3</option>
@@ -62,7 +63,7 @@ transform: translate(-50%, -50%);" >
     <div class="input-group-prepend">
       <label class="input-group-text" for="inputGroupSelect01">Manufacturer</label>
     </div>
-    <select class="manufacturer" id="manufacturer" ng-model="manufacturer">
+    <select class="manufacturer" id="manufacturer" my-model-value = "{{trailer.manufacturer}}" ng-model="manufacturer">
         <option value="aluma">Aluma</option>
         <option value="forestriver">Forest River</option>
       <option value="bigtex">Big Tex</option>
@@ -72,12 +73,12 @@ transform: translate(-50%, -50%);" >
 
   <div class = "quantity">
     <label for ="quantity">Quantity:</label>
-    <input type = "text" class ="form-control" id = "quantity" ng-model="quantity">
+    <input type = "text" class ="form-control" id = "quantity"my-model-value = "{{trailer.quantity}}" ng-model="quantity">
   </div> 
 <br>
         <div class="input-group">
             <div class="input-group-prepend">
-              <span class="input-group-text" id="inputGroupFileAddon01" ng-model="image">Upload Image</span>
+              <span class="input-group-text" id="inputGroupFileAddon01" my-model-value= "{{trailer.image}}" ng-model="image">Upload Image</span>
             </div>
             <div class="custom-file">
               <input type="file" class="custom-file-input" id="inputGroupFile01"
