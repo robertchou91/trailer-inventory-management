@@ -1,6 +1,6 @@
 # Trailer Inventory Management
 
-Foobar is an AngularJS SPA (Single Page Application) with functionality for internal employees of Cargo Trailers Inc. to edit trailer inventory for the company. 
+Cargo Trailers Inventory Management Website is an AngularJS SPA (Single Page Application) with functionality for internal employees of Cargo Trailers Inc. to edit trailer inventory for the company. 
 
 ## Usage
 
