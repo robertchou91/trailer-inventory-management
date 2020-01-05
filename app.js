@@ -1,14 +1,23 @@
-var app = angular.module('myApp', ['ngRoute', 'ngCookies']);
+var app = angular.module('myApp', ['ngRoute', 'ngStorage']);
 
 app.config(function ($routeProvider) {
     $routeProvider
         .when("/", {
             templateUrl: "views/main.html",
-            controller: 'loginController'
+            controller: 'logincontrol'
         })
         .when("/list", {
             templateUrl: "views/list.html",
-            controller: 'listController'
+            controller: 'listController',
+            // resolve: {
+            //     'check': function($location, $sessionStorage) {
+            //         if (!$sessionStorage.loggedIn) {
+            //             $location.path('/'); 
+            //         } else {
+            //             console.log("testing");
+            //         }
+            //     }
+            // }
         })
         .when("/create", {
             templateUrl: "views/create.html",

@@ -1,6 +1,7 @@
 app.controller('listController', function ($scope, $http) {
     $scope.trailers = [];
-
+    // $scope.userLoggedIn = true;
+    console.log($scope.userLoggedIn);
     $http.get("https://cargo-trailer-server.herokuapp.com/api/trailers")
         .then(function (response) {
             console.log("Successfully got Trailers");

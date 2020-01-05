@@ -6,7 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <script src="/node_modules/angular/angular.js"></script>
         <script src="/node_modules/angular-route/angular-route.js"></script>
-        <script src="/node_modules/angular-cookies/angular-cookies.js"></script>
+        <script src="/node_modules/ngstorage/ngStorage.min.js"></script>
         <link
             rel="stylesheet"
             href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -20,10 +20,11 @@
         <script type="text/javascript" src="controllers/list/list.js"></script>
         <script type="text/javascript" src="controllers/create/create.js"></script>
         <script type="text/javascript" src="controllers/edit/edit.js"></script>
+        <script type="text/javascript" src="controllers/logout/logout.js"></script>
         <title>Trailer Inventory Management</title>
     </head>
     <body ng-app="myApp">
-        <nav class="navbar navbar-expand-xl navbar-expand-lg navbar-expand-md navbar-expand-sm navbar-custom navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-xl navbar-expand-lg navbar-expand-md navbar-expand-sm navbar-custom navbar-dark bg-dark" ng-show="userLoggedIn">
             <a class="navbar-brand" href="#">Cargo Trailers</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -41,9 +42,9 @@
                         <a class="nav-link" href="#!/create">Create</a>
                     </li>
                 </ul>
-                <ul class="navbar-nav ml-auto">
+                <ul ng-controller="logoutController" class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="">Log Out</a>
+                        <a class="nav-link" href="" ng-click="logout()">Log Out</a>
                     </li>
                 </ul> 
             </div>
