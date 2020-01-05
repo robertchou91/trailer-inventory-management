@@ -32,7 +32,12 @@ app.config(function ($routeProvider) {
         });
     // $locationProvider.html5Mode(true);
 
-    // $scope.getSession = sessionStorage.getItem('userIn');
+    
 });
+
+app.controller('navController', function ($scope) {
+    
+    $scope.userLoggedIn = sessionStorage.getItem("userIn");
+})
 
 

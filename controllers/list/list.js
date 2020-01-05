@@ -1,7 +1,7 @@
 app.controller('listController', function ($scope, $http) {
     $scope.trailers = [];
     // $scope.userLoggedIn = true;
-    $scope.userLoggedIn = sessionStorage.getItem('userIn');
+    // $scope.userLoggedIn = sessionStorage.getItem("userIn");;
     console.log($scope.userLoggedIn);
     $http.get("https://cargo-trailer-server.herokuapp.com/api/trailers")
         .then(function (response) {
@@ -79,3 +79,4 @@ app.filter('startFrom', function () {
         }
     }
 });
+
