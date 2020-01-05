@@ -58,7 +58,7 @@ app.controller('listController', function ($scope, $http) {
 
     $scope.pagination = {
         currentPage: 0,
-        pageSize: 5,
+        pageSize: 25,
         numberOfPages: function () {
             return Math.ceil($scope.trailers.length / $scope.pagination.pageSize);
         }
