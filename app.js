@@ -31,5 +31,8 @@ app.config(function ($routeProvider) {
             redirectTo: '/'
         });
     // $locationProvider.html5Mode(true);
+
+    // $scope.getSession = sessionStorage.getItem('userIn');
 });
+
 
