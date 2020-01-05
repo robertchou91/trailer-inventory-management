@@ -21,7 +21,7 @@ app.config(function ($routeProvider) {
         })
         .when("/create", {
             templateUrl: "views/create.html",
-            controller: 'createController'
+            // controller: 'createController'
         })
         .when("/edit/:id", {
             templateUrl: "views/edit.html",
