@@ -17,8 +17,9 @@ transform: translate(-50%, -50%);" >
           <label class="input-group-text" for="inputGroupSelect01">Condition</label>
         </div>
         <select class="condition" id="condition" ng-model="condition">
-          <option value="1">New</option>
-          <option value="2">Preowned/Used</option>
+          <option value="New">New</option>
+          <option value="Used">Preowned/Used</option>
+          <option value = "Cosmetic Damage">Cosmetic Damage</option>
         </select>
       </div>
       
@@ -41,7 +42,7 @@ transform: translate(-50%, -50%);" >
       
       <div class="input-group mb-3">
         <div class="input-group-prepend">
-          <span class="input-group-text">Amount :$</span>
+          <span class="input-group-text">Amount $:</span>
         </div>
         <input type="text" class="form-control" aria-label="Amount" ng-model="amount">
       </div> 
@@ -51,10 +52,10 @@ transform: translate(-50%, -50%);" >
           <label class="input-group-text" for="inputGroupSelect01">Dimensions</label>
         </div>
         <select class="dimensions" id="dimensions" ng-model="dimension">
-            <option value="one">1x1x1</option>
-            <option value="two">2x2x2</option>
-          <option value="three">3x3x3</option>
-          <option value="four">4x4x4</option>
+            <option value="6 X 12">6 X 12</option>
+            <option value="7 X 14">7 X 14</option>
+          <option value="8.5 X 16">8.5 X 16</option>
+          <option value="8.5 X 24">8.5 X 24</option>
         </select>
       </div>
 <br>
@@ -63,10 +64,9 @@ transform: translate(-50%, -50%);" >
       <label class="input-group-text" for="inputGroupSelect01">Manufacturer</label>
     </div>
     <select class="manufacturer" id="manufacturer" ng-model="manufacturer">
-        <option value="aluma">Aluma</option>
-        <option value="forestriver">Forest River</option>
-      <option value="bigtex">Big Tex</option>
-      <option value="freedomtrailers">Freedom Trailers</option>
+        <option value="Arising">Arising</option>
+      <option value="Big Tex Trailers">Big Tex Trailers</option>
+      <option value="Little Tex Trailers">Little Tex Trailers</option>
     </select>
   </div>
 
