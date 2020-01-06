@@ -5,10 +5,10 @@ top: 50%;
 left: 50%;
 transform: translate(-50%, -50%);" >
 
-<form name="trailerForm">
+<form name="trailerForm" novalidate>
     <div class = "model-number">
         <label for ="model-number">Model Number:</label>
-        <input type = "text" class ="form-control" id = "model-number" ng-model= "modelnum">
+        <input type = "text" class ="form-control" id = "model-number" ng-model= "modelnum"  ng-required="true" ng-minlength="8" ng-maxlength="8">
     </div>
     <br>
     
@@ -16,27 +16,33 @@ transform: translate(-50%, -50%);" >
         <div class="input-group-prepend">
           <label class="input-group-text" for="inputGroupSelect01">Condition</label>
         </div>
-        <select class="condition" id="condition" ng-model="condition">
+        <select class="condition" id="condition" ng-model="condition" ng-required="true">
           <option value="New">New</option>
-          <option value="Used">Preowned/Used</option>
+          <option value="Used">Used</option>
           <option value = "Cosmetic Damage">Cosmetic Damage</option>
         </select>
       </div>
       
-      <div class = "year">
-        <label for ="year">Year:</label>
-        <input type = "number" class ="form-control" id = "year" ng-model="year" value="2020" min="2018" max="2020" ng-required="true">
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="inputGroupSelect01">Year</label>
+        </div>
+        <select class="year" id="year" ng-model="year" ng-required="true">
+          <option value="2018">2018</option>
+          <option value="2019">2019</option>
+          <option value = "2020">2020</option>
+        </select>
       </div>
 
       <div class = "color">
         <label for ="color">Color:</label>
-        <input type = "text" class ="form-control" id = "color" ng-model="color">
+        <input type = "text" class ="form-control" id = "color" ng-model="color"  ng-required="true">
       </div> 
 
       
       <div class = "payload-capacity">
         <label for ="payload-capacity">Payload Capacity:</label>
-        <input type = "number" class ="form-control" id = "payload-capacity" ng-model="payload" min="1770" max="6700">
+        <input type = "number" class ="form-control" id = "payload-capacity" ng-model="payload" min="1770" max="6700"  ng-required="true">
       </div> 
 <br>
       
@@ -44,14 +50,14 @@ transform: translate(-50%, -50%);" >
         <div class="input-group-prepend">
           <span class="input-group-text">Amount $:</span>
         </div>
-        <input type="text" class="form-control" aria-label="Amount" ng-model="amount">
+        <input type="text" class="form-control" aria-label="Amount" ng-model="amount"  ng-required="true"  ng-pattern="regex">
       </div> 
 <br>
       <div class="input-group mb-3">
         <div class="input-group-prepend">
           <label class="input-group-text" for="inputGroupSelect01">Dimensions</label>
         </div>
-        <select class="dimensions" id="dimensions" ng-model="dimension">
+        <select class="dimensions" id="dimensions" ng-model="dimension"  ng-required="true">
             <option value="6 X 12">6 X 12</option>
             <option value="7 X 14">7 X 14</option>
           <option value="8.5 X 16">8.5 X 16</option>
@@ -63,7 +69,7 @@ transform: translate(-50%, -50%);" >
     <div class="input-group-prepend">
       <label class="input-group-text" for="inputGroupSelect01">Manufacturer</label>
     </div>
-    <select class="manufacturer" id="manufacturer" ng-model="manufacturer">
+    <select class="manufacturer" id="manufacturer" ng-model="manufacturer"  ng-required="true">
         <option value="Arising">Arising</option>
       <option value="Big Tex Trailers">Big Tex Trailers</option>
       <option value="Little Tex Trailers">Little Tex Trailers</option>
@@ -72,20 +78,16 @@ transform: translate(-50%, -50%);" >
 
   <div class = "quantity">
     <label for ="quantity">Quantity:</label>
-    <input type = "text" class ="form-control" id = "quantity" ng-model="quantity">
+    <input type = "text" class ="form-control" id = "quantity" ng-model="quantity" ng-required="true">
   </div> 
 <br>
-        <div class="input-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text" id="inputGroupFileAddon01" ng-model="image">Upload Image</span>
-            </div>
-            <div class="custom-file">
-              <input type="file" class="custom-file-input" id="inputGroupFile01"
-                aria-describedby="inputGroupFileAddon01">
-              <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
-            </div>
-     </div>
+
+<input type="file" id="file" name="file"/>
+<button ng-click="upload()">Upload</button>
+
      <br>
-     <input type="submit" value="Submit" ng-click="submit()" ng-disabled="trailerForm.$invalid">
+     <input type="submit" value="Submit" ng-click="submit()">
      </form>
      </div>
+     
+     <!--ng-disabled="trailerForm.$invalid"-->
