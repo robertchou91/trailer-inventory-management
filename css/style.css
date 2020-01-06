@@ -2,9 +2,34 @@ body, html {
     height: 100%;
 }
 
-.container {
+.container-fluid {
     height: 100vh;
 }
+
+/* Login CSS */
+.login {
+    
+    background-image: linear-gradient(
+        to right bottom,
+        rgba(55, 0, 179, 0.7),
+        rgba(98, 0, 238, 0.7)),
+        url("../img/trailertruck.jpeg");
+    
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.mybtn {
+    background-color: #6200ee;
+    color: white;
+}
+
+
+
+
+
+
 
 
 
@@ -17,4 +42,4 @@ input[disabled = "disabled"] {
     cursor: not-allowed;
 }
 
-/* Login CSS */
+
