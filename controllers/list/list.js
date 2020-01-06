@@ -7,6 +7,7 @@ app.controller('listController', function ($scope, $window, $http) {
         .then(function (response) {
             console.log("Successfully got Trailers");
             $scope.trailers = response.data;
+            console.log($scope.trailers);
         }, function (response) {
             console.log("Unable to get Trailers");
         });
@@ -65,8 +66,8 @@ app.controller('listController', function ($scope, $window, $http) {
     };
 
     if (sessionStorage.userIn != "true") {
-		$window.location.href =  '/';
-	}
+        $window.location.href = '/';
+    }
 
 
 });
@@ -82,4 +83,5 @@ app.filter('startFrom', function () {
         }
     }
 });
+
 
