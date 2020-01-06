@@ -1,4 +1,4 @@
-app.controller("logincontrol", function ($scope, $http, $window, $localStorage) {
+app.controller("logincontrol", function ($scope, $http, $window) {
 	$scope.submit = function () {
 		var data = {
 			username: $scope.username,
@@ -27,6 +27,10 @@ app.controller("logincontrol", function ($scope, $http, $window, $localStorage) 
 
 
 		})
+	}
+
+	if (sessionStorage.userIn == "true") {
+		$window.location.href =  '#!/list';
 	}
 
 

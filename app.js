@@ -9,15 +9,6 @@ app.config(function ($routeProvider) {
         .when("/list", {
             templateUrl: "views/list.html",
             controller: 'listController',
-            // resolve: {
-            //     'check': function($location, $sessionStorage) {
-            //         if (!$sessionStorage.loggedIn) {
-            //             $location.path('/'); 
-            //         } else {
-            //             console.log("testing");
-            //         }
-            //     }
-            // }
         })
         .when("/create", {
             templateUrl: "views/create.html",

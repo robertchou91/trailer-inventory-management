@@ -1,4 +1,4 @@
-app.controller('listController', function ($scope, $http) {
+app.controller('listController', function ($scope, $window, $http) {
     $scope.trailers = [];
     // $scope.userLoggedIn = true;
     // $scope.userLoggedIn = sessionStorage.getItem("userIn");;
@@ -64,6 +64,9 @@ app.controller('listController', function ($scope, $http) {
         }
     };
 
+    if (sessionStorage.userIn != "true") {
+		$window.location.href =  '/';
+	}
 
 
 });
