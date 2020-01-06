@@ -4,7 +4,7 @@ app.config(function ($routeProvider) {
     $routeProvider
         .when("/", {
             templateUrl: "views/main.html",
-            controller: 'loginController'
+            controller: 'loginController',
         })
         .when("/list", {
             templateUrl: "views/list.html",
@@ -27,8 +27,8 @@ app.config(function ($routeProvider) {
 });
 
 app.controller('navController', function ($scope) {
-    
     $scope.userLoggedIn = sessionStorage.getItem("userIn");
+
 })
 
 
