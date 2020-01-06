@@ -15,6 +15,9 @@ app.controller("loginController", function ($scope, $http, $window) {
 				console.log(response.status);
 				$window.location.href = '#!/list';
 
+			} else {
+				$scope.errorMessage = "Wrong Username and/or Password";
+				console.log(testing);
 			}
 		})
 	}
