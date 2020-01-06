@@ -28,7 +28,8 @@ app.config(function ($routeProvider) {
 
 app.controller('navController', function ($scope) {
     $scope.userLoggedIn = sessionStorage.getItem("userIn");
-
 })
+
+
 
 
