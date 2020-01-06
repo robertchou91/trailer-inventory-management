@@ -1,4 +1,4 @@
-app.controller("logincontrol", function ($scope, $http, $window) {
+app.controller("loginController", function ($scope, $http, $window) {
 	$scope.submit = function () {
 		var data = {
 			username: $scope.username,
