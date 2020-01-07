@@ -1,93 +1,156 @@
-
-<div class="container" ng-app="createapp" ng-controller="myCreate" style = "margin: 0;
+<div
+    class="container"
+    ng-app="createapp"
+    ng-controller="myCreate"
+    style="margin: 0;
 position: absolute;
 top: 50%;
 left: 50%;
-transform: translate(-50%, -50%);" >
-
-<form name="trailerForm" novalidate>
-    <div class = "model-number">
-        <label for ="model-number">Model Number:</label>
-        <input type = "text" class ="form-control" id = "model-number" ng-model= "modelnum"  ng-required="true" ng-minlength="8" ng-maxlength="8">
-    </div>
-    <br>
-    
-    <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <label class="input-group-text" for="inputGroupSelect01">Condition</label>
+transform: translate(-50%, -50%);"
+>
+    <form name="trailerForm" novalidate>
+        <div class="model-number">
+            <label for="model-number">Model Number:</label>
+            <input
+                type="text"
+                class="form-control"
+                id="model-number"
+                ng-model="modelnum"
+                ng-required="true"
+                ng-minlength="8"
+                ng-maxlength="8"
+            />
         </div>
-        <select class="condition" id="condition" ng-model="condition" ng-required="true">
-          <option value="New">New</option>
-          <option value="Used">Used</option>
-          <option value = "Cosmetic Damage">Cosmetic Damage</option>
-        </select>
-      </div>
-      
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <label class="input-group-text" for="inputGroupSelect01">Year</label>
+        <br />
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="inputGroupSelect01"
+                    >Condition</label
+                >
+            </div>
+            <select
+                class="condition"
+                id="condition"
+                ng-model="condition"
+                ng-required="true"
+            >
+                <option value="New">New</option>
+                <option value="Used">Used</option>
+                <option value="Cosmetic Damage">Cosmetic Damage</option>
+            </select>
         </div>
-        <select class="year" id="year" ng-model="year" ng-required="true">
-          <option value="2018">2018</option>
-          <option value="2019">2019</option>
-          <option value = "2020">2020</option>
-        </select>
-      </div>
 
-      <div class = "color">
-        <label for ="color">Color:</label>
-        <input type = "text" class ="form-control" id = "color" ng-model="color"  ng-required="true">
-      </div> 
-
-      
-      <div class = "payload-capacity">
-        <label for ="payload-capacity">Payload Capacity:</label>
-        <input type = "number" class ="form-control" id = "payload-capacity" ng-model="payload" min="1770" max="6700"  ng-required="true">
-      </div> 
-<br>
-      
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text">Amount $:</span>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="inputGroupSelect01"
+                    >Year</label
+                >
+            </div>
+            <select class="year" id="year" ng-model="year" ng-required="true">
+                <option value="2018">2018</option>
+                <option value="2019">2019</option>
+                <option value="2020">2020</option>
+            </select>
         </div>
-        <input type="text" class="form-control" aria-label="Amount" ng-model="amount"  ng-required="true"  ng-pattern="regex">
-      </div> 
-<br>
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <label class="input-group-text" for="inputGroupSelect01">Dimensions</label>
+
+        <div class="color">
+            <label for="color">Color:</label>
+            <input
+                type="text"
+                class="form-control"
+                id="color"
+                ng-model="color"
+                ng-required="true"
+            />
         </div>
-        <select class="dimensions" id="dimensions" ng-model="dimension"  ng-required="true">
-            <option value="6 X 12">6 X 12</option>
-            <option value="7 X 14">7 X 14</option>
-          <option value="8.5 X 16">8.5 X 16</option>
-          <option value="8.5 X 24">8.5 X 24</option>
-        </select>
-      </div>
-<br>
-<div class="input-group mb-3">
-    <div class="input-group-prepend">
-      <label class="input-group-text" for="inputGroupSelect01">Manufacturer</label>
-    </div>
-    <select class="manufacturer" id="manufacturer" ng-model="manufacturer"  ng-required="true">
-        <option value="Arising">Arising</option>
-      <option value="Big Tex Trailers">Big Tex Trailers</option>
-      <option value="Little Tex Trailers">Little Tex Trailers</option>
-    </select>
-  </div>
 
-  <div class = "quantity">
-    <label for ="quantity">Quantity:</label>
-    <input type = "text" class ="form-control" id = "quantity" ng-model="quantity" ng-required="true">
-  </div> 
-<br>
+        <div class="payload-capacity">
+            <label for="payload-capacity">Payload Capacity:</label>
+            <input
+                type="number"
+                class="form-control"
+                id="payload-capacity"
+                ng-model="payload"
+                min="1770"
+                max="6700"
+                ng-required="true"
+            />
+        </div>
+        <br />
 
-<input type="file" id="file" name="file"/>
-<button ng-click="upload()">Upload</button>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Amount $:</span>
+            </div>
+            <input
+                type="text"
+                class="form-control"
+                aria-label="Amount"
+                ng-model="amount"
+                ng-required="true"
+                ng-pattern="regex"
+            />
+        </div>
+        <br />
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="inputGroupSelect01"
+                    >Dimensions</label
+                >
+            </div>
+            <select
+                class="dimensions"
+                id="dimensions"
+                ng-model="dimension"
+                ng-required="true"
+            >
+                <option value="6 X 12">6 X 12</option>
+                <option value="7 X 14">7 X 14</option>
+                <option value="8.5 X 16">8.5 X 16</option>
+                <option value="8.5 X 24">8.5 X 24</option>
+            </select>
+        </div>
+        <br />
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="inputGroupSelect01"
+                    >Manufacturer</label
+                >
+            </div>
+            <select
+                class="manufacturer"
+                id="manufacturer"
+                ng-model="manufacturer"
+                ng-required="true"
+            >
+                <option value="Arising">Arising</option>
+                <option value="Big Tex Trailers">Big Tex Trailers</option>
+                <option value="Little Tex Trailers">Little Tex Trailers</option>
+            </select>
+        </div>
 
-     <br>
-     <input type="submit" value="Submit" ng-click="submit()">
-     </form>
-     </div>
-     
-     <!--ng-disabled="trailerForm.$invalid"-->
+        <div class="quantity">
+            <label for="quantity">Quantity:</label>
+            <input
+                type="text"
+                class="form-control"
+                id="quantity"
+                ng-model="quantity"
+                ng-required="true"
+            />
+        </div>
+        <br />
+        <input
+            type="file"
+            id="file"
+            name="file"
+            onchange="angular.element(this).scope().upload(this)"
+        />
+
+        <br />
+        <input type="submit" value="Submit" ng-click="submit()" />
+    </form>
+</div>
+
+<!--ng-disabled="trailerForm.$invalid"-->
