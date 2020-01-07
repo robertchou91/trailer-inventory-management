@@ -15,6 +15,7 @@ app.controller("loginController", function ($scope, $http, $window) {
 			console.log(response.status);
 			$window.location.href = '#!/list';
 		}, function (response) {
+			$scope.error = "Username and/or Password are Incorrect";
 		})
 	}
 
