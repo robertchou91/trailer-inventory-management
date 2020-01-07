@@ -7,6 +7,7 @@ app.controller("loginController", function ($scope, $http, $window) {
 
 
 		$http.post('https://cargo-trailer-server.herokuapp.com/api/login', (data)).then(function (response) {
+
 			sessionStorage.userIn = "true";
 			$scope.$parent.userLoggedIn = sessionStorage.getItem("userIn");
 			$scope.msg = "Succesfully logged in";
@@ -17,13 +18,13 @@ app.controller("loginController", function ($scope, $http, $window) {
 			
 		})
 	}
+	
 
 	if (sessionStorage.userIn == "true") {
+
 		$window.location.href = '#!/list';
 	}
-
-
-
+	
 });
 
 
