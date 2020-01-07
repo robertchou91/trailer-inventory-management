@@ -1,92 +1,170 @@
-
-<div class="container" style = "margin: 0;
+<div
+    class="container"
+    style="margin: 0;
 position: absolute;
 top: 50%;
 left: 50%;
-transform: translate(-50%, -50%);" ng-app="editpage" ng-controller="editController" >
-
-
-<form>
-    <div class = "model-number">
-        <label for ="model-number">Model Number:</label>
-        <input type="text" class="form-control" id="model-number" ng-model="modelnum" my-model-value = "{{trailer.model}}" >
-    </div>
-    <br>
-    
-    <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <label class="input-group-text" for="inputGroupSelect01">Condition</label>
+transform: translate(-50%, -50%);"
+    ng-app="editpage"
+    ng-controller="editController"
+>
+    <form>
+        <div class="model-number">
+            <label for="model-number">Model Number:</label>
+            <input
+                type="text"
+                class="form-control"
+                id="model-number"
+                ng-model="modelnum"
+                my-model-value="{{trailer.model}}"
+            />
         </div>
-        <select class="condition" id="condition" my-model-value = "{{trailer.condition}}" ng-model="condition">
-          <option value="New">New</option>
-          <option value="Used">Preowned/Used</option>
-          <option value = "Cosmetic Damage">Cosmetic Damage</option>
-        </select>
-      </div>
-      
-      <div class = "year">
-        <label for ="year">Year:</label>
-        <input type = "text" class ="form-control" id = "year" my-model-value = "{{trailer.year}}" ng-model="year">
-      </div>
+        <br />
 
-      <div class = "color">
-        <label for ="color">Color:</label>
-        <input type = "text" class ="form-control" id = "color" ng-model="color" my-model-value = "{{trailer.color}}">
-      </div> 
-
-      
-      <div class = "payload-capacity">
-        <label for ="payload-capacity">Payload Capacity:</label>
-        <input type = "text" class ="form-control" id = "payload-capacity" ng-model="payload" my-model-value = "{{trailer.capacity}}">
-      </div> 
-<br>
-      
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text">Amount :$</span>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="inputGroupSelect01"
+                    >Condition</label
+                >
+            </div>
+            <select
+                class="condition"
+                id="condition"
+                my-model-value="{{trailer.condition}}"
+                ng-model="condition"
+            >
+                <option value="New">New</option>
+                <option value="Used">Preowned/Used</option>
+                <option value="Cosmetic Damage">Cosmetic Damage</option>
+            </select>
         </div>
-        <input type="text" class="form-control" aria-label="Amount" my-model-value = "{{trailer.price}}" ng-model="amount">
-      </div> 
-<br>
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <label class="input-group-text" for="inputGroupSelect01">Dimensions</label>
-        </div>
-        <select class="dimensions" id="dimensions" my-model-value = "{{trailer.dimension}}" ng-model="dimension">
-          <option value="6 X 12">6 X 12</option>
-          <option value="7 X 14">7 X 14</option>
-        <option value="8.5 X 16">8.5 X 16</option>
-        <option value="8.5 X 24">8.5 X 24</option>
-        </select>
-      </div>
-<br>
-<div class="input-group mb-3">
-    <div class="input-group-prepend">
-      <label class="input-group-text" for="inputGroupSelect01">Manufacturer</label>
-    </div>
-    <select class="manufacturer" id="manufacturer" my-model-value = "{{trailer.manufacturer}}" ng-model="manufacturer">
-      <option value="Arising">Arising</option>
-      <option value="Big Tex Trailers">Big Tex Trailers</option>
-      <option value="Little Tex Trailers">Little Tex Trailers</option>
-    </select>
-  </div>
 
-  <div class = "quantity">
-    <label for ="quantity">Quantity:</label>
-    <input type = "text" class ="form-control" id = "quantity"my-model-value = "{{trailer.quantity}}" ng-model="quantity">
-  </div> 
-<br>
+        <div class="year">
+            <label for="year">Year:</label>
+            <input
+                type="text"
+                class="form-control"
+                id="year"
+                my-model-value="{{trailer.year}}"
+                ng-model="year"
+            />
+        </div>
+
+        <div class="color">
+            <label for="color">Color:</label>
+            <input
+                type="text"
+                class="form-control"
+                id="color"
+                ng-model="color"
+                my-model-value="{{trailer.color}}"
+            />
+        </div>
+
+        <div class="payload-capacity">
+            <label for="payload-capacity">Payload Capacity:</label>
+            <input
+                type="text"
+                class="form-control"
+                id="payload-capacity"
+                ng-model="payload"
+                my-model-value="{{trailer.capacity}}"
+            />
+        </div>
+        <br />
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Amount :$</span>
+            </div>
+            <input
+                type="text"
+                class="form-control"
+                aria-label="Amount"
+                my-model-value="{{trailer.price}}"
+                ng-model="amount"
+            />
+        </div>
+        <br />
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="inputGroupSelect01"
+                    >Dimensions</label
+                >
+            </div>
+            <select
+                class="dimensions"
+                id="dimensions"
+                my-model-value="{{trailer.dimension}}"
+                ng-model="dimension"
+            >
+                <option value="6 X 12">6 X 12</option>
+                <option value="7 X 14">7 X 14</option>
+                <option value="8.5 X 16">8.5 X 16</option>
+                <option value="8.5 X 24">8.5 X 24</option>
+            </select>
+        </div>
+        <br />
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="inputGroupSelect01"
+                    >Manufacturer</label
+                >
+            </div>
+            <select
+                class="manufacturer"
+                id="manufacturer"
+                my-model-value="{{trailer.manufacturer}}"
+                ng-model="manufacturer"
+            >
+                <option value="Arising">Arising</option>
+                <option value="Big Tex Trailers">Big Tex Trailers</option>
+                <option value="Little Tex Trailers">Little Tex Trailers</option>
+            </select>
+        </div>
+
+        <div class="quantity">
+            <label for="quantity">Quantity:</label>
+            <input
+                type="text"
+                class="form-control"
+                id="quantity"
+                my-model-value="{{trailer.quantity}}"
+                ng-model="quantity"
+            />
+        </div>
+        <br />
+        <!-- <input
+            type="file"
+            id="file"
+            name="file"
+            my-model-value="{{trailer.image}}"
+            ng-model="image"
+            onchange="angular.element(this).scope().upload(this)"
+        />
         <div class="input-group">
             <div class="input-group-prepend">
-              <span class="input-group-text" id="inputGroupFileAddon01" my-model-value= "{{trailer.image}}" ng-model="image">Upload Image</span>
+                <span
+                    class="input-group-text"
+                    id="inputGroupFileAddon01"
+                    my-model-value="{{trailer.image}}"
+                    ng-model="image"
+                    >Upload Image</span
+                >
             </div>
             <div class="custom-file">
-              <input type="file" class="custom-file-input" id="inputGroupFile01"
-                aria-describedby="inputGroupFileAddon01">
-              <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                <input
+                    type="file"
+                    class="custom-file-input"
+                    id="inputGroupFile01"
+                    aria-describedby="inputGroupFileAddon01"
+                />
+                <label class="custom-file-label" for="inputGroupFile01"
+                    >Choose file</label
+                >
             </div>
-     </div>
-     <br>
-     <input type="submit" value="Submit" ng-click="submit()">
-     </form>
-     </div>
+        </div> -->
+        <br />
+        <input type="submit" value="Submit" ng-click="submit()" />
+    </form>
+</div>
