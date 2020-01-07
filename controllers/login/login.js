@@ -14,17 +14,16 @@ app.controller("loginController", function ($scope, $http, $window) {
 			console.log($scope.msg);
 			console.log(response.status);
 			$window.location.href = '#!/list';
-		}, function(response) {
-			
+		}, function (response) {
 		})
 	}
-	
+
 
 	if (sessionStorage.userIn == "true") {
 
 		$window.location.href = '#!/list';
 	}
-	
+
 });
 
 
