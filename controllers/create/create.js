@@ -1,18 +1,20 @@
 
 app.controller("myCreate", function ($scope, $http, $window) {
    $scope.regex = '\\d+';
-   //    $scope.upload = function() {
-   //       var f = document.getElementById('file').files[0];
-   //       var r = new FileReader();
-   //       r.onloadend = function(e) {
-   //           var data = e.target.result;
-   //       }
-   //       r.readAsBinaryString(f);
-   //   }
+   $scope.upload = function () {
+      var f = document.getElementById('file').files[0];
+      var r = new FileReader();
+      r.onloadend = function (e) {
+         $scope.image = r.result;
+      }
+      r.readAsDataURL(f);
+   }
 
 
 
-   
+
+
+
    $scope.submit = function () {
       var data = {
 
