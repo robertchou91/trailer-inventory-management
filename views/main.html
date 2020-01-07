@@ -4,7 +4,7 @@
             <div class="card card-signin">
                 <div class="card-body">
                     {{error}}
-                    <h3 class="card-title text-center">Sign In</h3>
+                    <h3 class="card-title text-center my-3">Sign In</h3>
                     <form name="form" role="form">
                         <div class="form-group" ng-class="{ 'has-error': form.username.$dirty && form.username.$invalid }"}>
                             <label for="username">Username</label>
@@ -17,8 +17,7 @@
                             <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">Password  Required</span>
                         </div>
                         <div class="form-actions">
-                            <button type="submit"  class="btn btn-info" ng-click ="submit()" >Login</button>
-                        </div>
+                            <button type="submit"  class="btn col-md-12 my-4" ng-click ="submit()" >Login</button>
                         </div>
                     </form>
                 </div>
