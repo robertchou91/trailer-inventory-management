@@ -2,6 +2,8 @@ body, html {
     height: 100%;
 }
 
+
+
 /* Navbar CSS */
 .navbar-custom {
     background-color: #6200ee !important;
@@ -15,6 +17,8 @@ body, html {
 .container-fluid {
     height: 100vh;
 }
+
+
 
 /* Login CSS */
 .login {
@@ -33,17 +37,37 @@ body, html {
 .card {
     -webkit-box-shadow: 0px 10px 20px 0px rgba(50, 50, 50, 0.92);
 	-moz-box-shadow:    0px 10px 20px 0px rgba(50, 50, 50, 0.92);
-	box-shadow:         0px 10px 20px 0px rgba(50, 50, 50, 0.92);
+    box-shadow:         0px 10px 20px 0px rgba(50, 50, 50, 0.92);
+    border-radius: 20px;
 }
 
-.mybtn {
+.btn {
+    background-color: #6200ee;
+    color: white;
+    font-size: 20px;
+    border-radius: 20px;
+    -webkit-box-shadow: 0px 5px 5px 0px rgba(50, 50, 50, 0.12);
+	-moz-box-shadow:    0px 5px 5px 0px rgba(50, 50, 50, 0.12);
+    box-shadow:         0px 5px 5px 0px rgba(50, 50, 50, 0.12);
+    transition: all .2s ease-in-out;
+}
+
+.btn:hover {
+    color: white;
+    transform: scale(1.020);
+}
+
+
+/* List Page CSS */
+
+.thead-custom {
     background-color: #6200ee;
     color: white;
 }
 
 
 
-
+/* Validations */
 
 input.ng-invalid.ng-touched { 
     border: 2px red solid;
@@ -56,6 +80,11 @@ input.ng-invalid-max {
 input[disabled = "disabled"] {
     opacity: 0.4;
     cursor: not-allowed;
+}
+
+.loginmessage {
+    color: red;
+    font-size: 18px;
 }
 
 
