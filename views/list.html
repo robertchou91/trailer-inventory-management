@@ -22,10 +22,10 @@
     <label>
         Dimensions
         <select ng-model="sizeList">
-            <option value="6X12">6 X 12</option>
-            <option value="7X14">7 X 14</option>
-            <option value="8.5X16">8.5 X 16</option>
-            <option value="8.5X24">8.5 X 24</option>
+            <option value="6 X 12">6 X 12</option>
+            <option value="7 X 14">7 X 14</option>
+            <option value="8.5 X 16">8.5 X 16</option>
+            <option value="8.5 X 24">8.5 X 24</option>
         </select>
     </label>
 
@@ -58,7 +58,7 @@
         </thead>
         <tbody>
             <tr
-                ng-repeat="trailer in trailers | filter:searchText | filter:conditionList | filter:manufacturerList | filter:yearList | filter:priceList | startFrom:pagination.currentPage*pagination.pageSize | limitTo:pagination.pageSize"
+                ng-repeat="trailer in trailers | filter:searchText | filter:conditionList | filter:manufacturerList | filter:yearList | filter:sizeList | startFrom:pagination.currentPage*pagination.pageSize | limitTo:pagination.pageSize"
             >
                 <td>{{trailer.title}}</td>
                 <td>
