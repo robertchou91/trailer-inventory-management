@@ -8,16 +8,22 @@ transform: translate(-50%, -50%);"
     ng-app="editpage"
     ng-controller="editController"
 >
-    <form>
-        <div class="model-number">
+    <form name="editForm">
+        <div class="model-number" ng-class="{ 'has-error': editForm.modelnum.$touched && editForm.modelnum.$invalid }">
             <label for="model-number">Model Number:</label>
             <input
                 type="text"
                 class="form-control"
                 id="model-number"
                 ng-model="modelnum"
+                name="modelnum"
+                required
+                ng-minlength="8"
+                ng-maxlength="8"
+                ng-pattern="regex1"
                 my-model-value="{{trailer.model}}"
             />
+            <span ng-show="trailerForm.modelnum.$touched && trailerForm.modelnum.$invalid" class="help-block">Model Number must be 8 characters long and match format (4 Alphanumeric Characters) - (3 Alphanumeric Characters)</span>
         </div>
         <br />
 
@@ -39,49 +45,65 @@ transform: translate(-50%, -50%);"
             </select>
         </div>
 
-        <div class="year">
-            <label for="year">Year:</label>
-            <input
-                type="text"
-                class="form-control"
-                id="year"
-                my-model-value="{{trailer.year}}"
-                ng-model="year"
-            />
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="inputGroupSelect01"
+                    >Year</label
+                >
+            </div>
+            <select class="year" id="year" ng-model="year" ng-required="true"
+            my-model-value="{{trailer.year}}"
+            >
+                <option value="2018">2018</option>
+                <option value="2019">2019</option>
+                <option value="2020">2020</option>
+            </select>
         </div>
 
-        <div class="color">
+        <div class="color" ng-class="{ 'has-error': editForm.color.$touched && editForm.color.$invalid }">
             <label for="color">Color:</label>
             <input
-                type="text"
-                class="form-control"
-                id="color"
-                ng-model="color"
-                my-model-value="{{trailer.color}}"
+            type="text"
+            class="form-control"
+            id="color"
+            name="color"
+            ng-model="color"
+            ng-required="true"
+            ng-pattern="regex2"
+            my-model-value="{{trailer.color}}"
             />
+            <span ng-show="editForm.color.$touched && editForm.color.$invalid" class="help-block">Invalid Color</span>
+
         </div>
 
-        <div class="payload-capacity">
+        <div class="payload-capacity"  ng-class="{ 'has-error': editForm.payload.$touched && editForm.payload.$invalid }">
             <label for="payload-capacity">Payload Capacity:</label>
             <input
-                type="text"
+            type="text"
                 class="form-control"
                 id="payload-capacity"
+                name="payload"
                 ng-model="payload"
+                min="1770"
+                max="6700"
+                ng-required="true"
+                ng-pattern="regex3"
                 my-model-value="{{trailer.capacity}}"
             />
+            <span ng-show="editForm.payload.$touched && editForm.payload.$invalid" class="help-block"Capacity must be between 1770-6770</span>
         </div>
         <br />
 
         <div class="input-group mb-3">
             <div class="input-group-prepend">
-                <span class="input-group-text">Amount :$</span>
+                <span class="input-group-text">Amount $:</span>
             </div>
             <input
                 type="text"
                 class="form-control"
                 aria-label="Amount"
                 my-model-value="{{trailer.price}}"
+                ng-pattern="regex"
                 ng-model="amount"
             />
         </div>
@@ -123,15 +145,20 @@ transform: translate(-50%, -50%);"
             </select>
         </div>
 
-        <div class="quantity">
+        <div class="quantity" ng-class="{ 'has-error': editForm.quantity.$touched && editForm.quantity.$invalid }">
             <label for="quantity">Quantity:</label>
             <input
-                type="text"
-                class="form-control"
-                id="quantity"
+            type="text"
+            class="form-control"
+            id="quantity"
+            name="quantity"
+            ng-required="true"
+            ng-pattern="regex4"
                 my-model-value="{{trailer.quantity}}"
                 ng-model="quantity"
             />
+            <span ng-show="editForm.quantity.$touched && editForm.quantity.$invalid" class="help-block">Quantity must be between 1-99</span>
+
         </div>
         <br />
         <!-- <input

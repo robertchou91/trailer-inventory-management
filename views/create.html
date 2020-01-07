@@ -75,7 +75,7 @@ transform: translate(-50%, -50%);"
         <div class="payload-capacity" ng-class="{ 'has-error': trailerForm.payload.$touched && trailerForm.payload.$invalid }">
             <label for="payload-capacity">Payload Capacity:</label>
             <input
-                type="number"
+                type="text"
                 class="form-control"
                 id="payload-capacity"
                 name="payload"
@@ -140,15 +140,18 @@ transform: translate(-50%, -50%);"
             </select>
         </div>
 
-        <div class="quantity">
+        <div class="quantity" ng-class="{ 'has-error': trailerForm.quantity.$touched && trailerForm.quantity.$invalid }">
             <label for="quantity">Quantity:</label>
             <input
                 type="text"
                 class="form-control"
                 id="quantity"
                 ng-model="quantity"
+                name="quantity"
                 ng-required="true"
+                ng-pattern="regex4"
             />
+            <span ng-show="trailerForm.quantity.$touched && trailerForm.quantity.$invalid" class="help-block">Quantity must be between 1-99</span>
         </div>
         <br />
         <input
