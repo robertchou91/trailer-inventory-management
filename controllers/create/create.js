@@ -1,5 +1,5 @@
 
-app.controller("myCreate", function ($scope, $http, $window) {
+app.controller("createController", function ($scope, $http, $window) {
    $scope.regex = '\\d+';
    $scope.regex1 = '^[a-zA-Z0-9]{4}-[a-zA-Z0-9]{3}$'
    $scope.regex2 = '^[a-zA-Z-]{1,22}$'

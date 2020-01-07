@@ -1,32 +1,71 @@
 <div class="container col-lg-10 my-5">
-    <label>Search: <input ng-model="searchText"/></label>
+    <div class="form-inline col-lg-12">
+        <div class="form-group form-inline mr-3 mb-2">
+            <label for="searchbar" class="mr-2">Search:</label>
+            <input type="text" class="form-control" ng-model="searchText" />
+        </div>
+        <div class="form-group form-inline mr-3 mb-2">
+            <label for="selectmanufacturer" class="mr-2">Manufacturer:</label>
+            <select class="form-control" ng-model="manufacturerList">
+                <option value="">Select All</option>
+                <option value="Arising">Arising</option>
+                <option value="Big Tex Trailers">Big Tex Trailers</option>
+                <option value="Little Tex Trailers">Little Tex Trailers</option>
+            </select>
+        </div>
+        <div class="form-group form-inline mr-3 mb-2">
+            <label for="selectcondition" class="mr-2">Condition:</label>
+            <select class="form-control" ng-model="conditionList">
+                <option value="">Select All</option>
+                <option value="New">New</option>
+                <option value="Used">Used</option>
+                <option value="Cosmetic Damage">Cosmetic Damage</option>
+            </select>
+        </div>
+        <div class="form-group form-inline mr-3 mb-2">
+            <label for="selectdimension" class="mr-2">Dimensions:</label>
+            <select class="form-control" ng-model="sizeList">
+                <option value="">Select All</option>
+                <option value="6 X 12">6 X 12</option>
+                <option value="7 X 14">7 X 14</option>
+                <option value="8.5 X 16">8.5 X 16</option>
+                <option value="8.5 X 24">8.5 X 24</option>
+            </select>
+        </div>
+        <div class="form-group form-inline mb-2">
+            <label for="selectyear" class="mr-2">Year:</label>
+            <select class="form-control" ng-model="yearList">
+                <option value="">Select All</option>
+                <option value="2018">2018</option>
+                <option value="2019">2019</option>
+                <option value="2020">2020</option>
+            </select>
+        </div>
+    </div>
 
-    <label>
+    <!-- <label>Search: <input ng-model="searchText"/></label> -->
+
+    <!-- <label>
         Manufacturer
         <select ng-model="manufacturerList">
             <option value="Arising">Arising</option>
             <option value="Big Tex Trailers">Big Tex Trailers</option>
             <option value="Little Tex Trailers">Little Tex Trailers</option>
         </select>
-    </label>
+    </label> -->
 
-    <label>
+    <!-- <label>
         Condition
         <select ng-model="conditionList">
             <option value="New">New</option>
             <option value="Used">Used</option>
             <option value="Cosmetic Damage">Cosmetic Damage</option>
         </select>
-    </label>
+    </label> -->
 
-    <label>
+    <!-- <label>
         Dimensions
-        <select ng-model="sizeList">
-            <option value="6 X 12">6 X 12</option>
-            <option value="7 X 14">7 X 14</option>
-            <option value="8.5 X 16">8.5 X 16</option>
-            <option value="8.5 X 24">8.5 X 24</option>
-        </select>
+        <select ng-model="sizeList"> </select>
     </label>
 
     <label>
@@ -36,9 +75,11 @@
             <option value="2019">2019</option>
             <option value="2020">2020</option>
         </select>
-    </label>
+    </label> -->
 
-    <table class="table table-responsive-sm table-responsive-md table-responsive-lg table-responsive-xl">
+    <table
+        class="table table-responsive-sm table-responsive-md table-responsive-lg table-responsive-xl my-3"
+    >
         <thead class="thead-custom text-center">
             <tr>
                 <th>Title</th>
@@ -58,11 +99,19 @@
         </thead>
         <tbody class="text-center">
             <tr
-                ng-repeat="trailer in trailers | filter:searchText | filter:conditionList | filter:manufacturerList | filter:yearList | filter:sizeList | startFrom:pagination.currentPage*pagination.pageSize | limitTo:pagination.pageSize"
+                ng-repeat="trailer in trailers | orderBy : 'title' | filter:searchText | filter:conditionList | filter:manufacturerList | filter:yearList | filter:sizeList | startFrom:pagination.currentPage*pagination.pageSize | limitTo:pagination.pageSize"
             >
-                <td>{{trailer.title}}</td>
                 <td>
-                    <img class="img-thumbnail" data-ng-src="data:image/png;base64,{{trailer.image.data}}" alt="Trailer Image" />
+                    {{trailer.title}}
+                    <br />
+                    {{trailer.manufacturer}}
+                </td>
+                <td>
+                    <img
+                        class="img-thumbnail"
+                        data-ng-src="data:image/png;base64,{{trailer.image.data}}"
+                        alt="Trailer Image"
+                    />
                 </td>
                 <td>{{trailer.model}}</td>
                 <td>{{trailer.dimension}}</td>
