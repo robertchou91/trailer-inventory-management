@@ -68,7 +68,7 @@
         <div class="payload-capacity" ng-class="{ 'has-error': trailerForm.payload.$touched && trailerForm.payload.$invalid }">
             <label for="payload-capacity">Payload Capacity:</label>
             <input
-                type="text"
+                type="number"
                 class="form-control"
                 id="payload-capacity"
                 name="payload"
@@ -76,7 +76,7 @@
                 min="1770"
                 max="6700"
                 ng-required="true"
-                ng-pattern="regex3"
+                ng-pattern="regex"
             />
             <span ng-show="trailerForm.payload.$touched && trailerForm.payload.$invalid" class="help-block">Capacity must be between 1770-6770</span>
         </div>
@@ -87,7 +87,7 @@
                 <span class="input-group-text">Amount $:</span>
             </div>
             <input
-                type="text"
+                type="number"
                 class="form-control"
                 aria-label="Amount"
                 ng-model="amount"
