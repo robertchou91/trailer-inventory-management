@@ -58,6 +58,14 @@ body, html {
 }
 
 
+/* List Page CSS */
+
+.thead-custom {
+    background-color: #6200ee;
+    color: white;
+}
+
+
 
 /* Validations */
 
