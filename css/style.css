@@ -2,6 +2,8 @@ body, html {
     height: 100%;
 }
 
+
+
 /* Navbar CSS */
 .navbar-custom {
     background-color: #6200ee !important;
@@ -15,6 +17,8 @@ body, html {
 .container-fluid {
     height: 100vh;
 }
+
+
 
 /* Login CSS */
 .login {
@@ -55,7 +59,7 @@ body, html {
 
 
 
-
+/* Validations */
 
 input.ng-invalid.ng-touched { 
     border: 2px red solid;
@@ -68,6 +72,11 @@ input.ng-invalid-max {
 input[disabled = "disabled"] {
     opacity: 0.4;
     cursor: not-allowed;
+}
+
+.loginmessage {
+    color: red;
+    font-size: 18px;
 }
 
 
