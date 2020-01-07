@@ -1,6 +1,10 @@
 <div class="container my-5">
     <form name="trailerForm">
-        <div class="model-number" ng-class="{ 'has-error': trailerForm.modelnum.$touched && trailerForm.modelnum.$invalid }"}>
+        <div
+            class="model-number form-group"
+            ng-class="{ 'has-error': trailerForm.modelnum.$touched && trailerForm.modelnum.$invalid }"
+            }
+        >
             <label for="model-number">Model Number:</label>
             <input
                 type="text"
@@ -13,10 +17,13 @@
                 ng-maxlength="8"
                 ng-pattern="regex1"
             />
-            <span ng-show="trailerForm.modelnum.$touched && trailerForm.modelnum.$invalid" class="help-block">Model Number must be 8 characters long and match format (4 Alphanumeric Characters) - (3 Alphanumeric Characters)</span>
+            <span
+                ng-show="trailerForm.modelnum.$touched && trailerForm.modelnum.$invalid"
+                class="help-block"
+                >Model Number must be 8 characters long and match format (4
+                Alphanumeric Characters) - (3 Alphanumeric Characters)</span
+            >
         </div>
-        <br />
-
         <div class="input-group mb-3">
             <div class="input-group-prepend">
                 <label class="input-group-text" for="inputGroupSelect01"
@@ -50,7 +57,11 @@
             </select>
         </div>
 
-        <div class="color"  ng-class="{ 'has-error': trailerForm.color.$touched && trailerForm.color.$invalid }"}>
+        <div
+            class="color form-group"
+            ng-class="{ 'has-error': trailerForm.color.$touched && trailerForm.color.$invalid }"
+            }
+        >
             <label for="color">Color:</label>
             <input
                 type="text"
@@ -61,11 +72,17 @@
                 ng-required="true"
                 ng-pattern="regex2"
             />
-            <span ng-show="trailerForm.color.$touched && trailerForm.color.$invalid" class="help-block">Invalid Color</span>
-
+            <span
+                ng-show="trailerForm.color.$touched && trailerForm.color.$invalid"
+                class="help-block"
+                >Invalid Color</span
+            >
         </div>
 
-        <div class="payload-capacity" ng-class="{ 'has-error': trailerForm.payload.$touched && trailerForm.payload.$invalid }">
+        <div
+            class="payload-capacity form-group"
+            ng-class="{ 'has-error': trailerForm.payload.$touched && trailerForm.payload.$invalid }"
+        >
             <label for="payload-capacity">Payload Capacity:</label>
             <input
                 type="number"
@@ -78,9 +95,12 @@
                 ng-required="true"
                 ng-pattern="regex"
             />
-            <span ng-show="trailerForm.payload.$touched && trailerForm.payload.$invalid" class="help-block">Capacity must be between 1770-6770</span>
+            <span
+                ng-show="trailerForm.payload.$touched && trailerForm.payload.$invalid"
+                class="help-block"
+                >Capacity must be between 1770-6770</span
+            >
         </div>
-        <br />
 
         <div class="input-group mb-3">
             <div class="input-group-prepend">
@@ -95,7 +115,6 @@
                 ng-pattern="regex"
             />
         </div>
-        <br />
         <div class="input-group mb-3">
             <div class="input-group-prepend">
                 <label class="input-group-text" for="inputGroupSelect01"
@@ -115,7 +134,6 @@
                 <option value="8.5 X 24">8.5 X 24</option>
             </select>
         </div>
-        <br />
         <div class="input-group mb-3">
             <div class="input-group-prepend">
                 <label class="input-group-text" for="inputGroupSelect01"
@@ -135,10 +153,13 @@
             </select>
         </div>
 
-        <div class="quantity" ng-class="{ 'has-error': trailerForm.quantity.$touched && trailerForm.quantity.$invalid }">
+        <div
+            class="quantity form-group"
+            ng-class="{ 'has-error': trailerForm.quantity.$touched && trailerForm.quantity.$invalid }"
+        >
             <label for="quantity">Quantity:</label>
             <input
-                type="text"
+                type="number"
                 class="form-control"
                 id="quantity"
                 ng-model="quantity"
@@ -146,19 +167,38 @@
                 ng-required="true"
                 ng-pattern="regex4"
             />
-            <span ng-show="trailerForm.quantity.$touched && trailerForm.quantity.$invalid" class="help-block">Quantity must be between 1-99</span>
+            <span
+                ng-show="trailerForm.quantity.$touched && trailerForm.quantity.$invalid"
+                class="help-block"
+                >Quantity must be between 1-99</span
+            >
         </div>
-        <br />
-        <input
+        <div class="form-group">
+            <label for="uploadFile">Upload Image:</label>
+            <input
+                type="file"
+                id="file"
+                name="file"
+                onchange="angular.element(this).scope().upload(this)"
+                class="form-control-file"
+            />
+        </div>
+        <!-- <input
             type="file"
             id="file"
             name="file"
-            ng-required="true"
             onchange="angular.element(this).scope().upload(this)"
+            ng-required="true"
         />
 
-        <br />
-        <input type="submit" value="Submit" ng-click="submit()" ng-disabled="trailerForm.$invalid" />
+        <br /> -->
+        <input
+            type="submit"
+            value="Submit"
+            class="btn btn-dark col-sm-1"
+            ng-click="submit()"
+            ng-disabled="trailerForm.$invalid"
+        />
     </form>
 </div>
 

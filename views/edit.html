@@ -1,4 +1,199 @@
-<div
+<div class="container my-5">
+    <form name="trailerForm">
+        <div
+            class="model-number form-group"
+            ng-class="{ 'has-error': trailerForm.modelnum.$touched && trailerForm.modelnum.$invalid }"
+            }
+        >
+            <label for="model-number">Model Number:</label>
+            <input
+                type="text"
+                class="form-control"
+                id="model-number"
+                name="modelnum"
+                ng-model="modelnum"
+                required
+                ng-minlength="8"
+                ng-maxlength="8"
+                ng-pattern="regex1"
+                my-model-value="{{trailer.model}}"
+            />
+            <span
+                ng-show="trailerForm.modelnum.$touched && trailerForm.modelnum.$invalid"
+                class="help-block"
+                >Model Number must be 8 characters long and match format (4
+                Alphanumeric Characters) - (3 Alphanumeric Characters)</span
+            >
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="inputGroupSelect01"
+                    >Condition</label
+                >
+            </div>
+            <select
+                class="condition"
+                id="condition"
+                ng-model="condition"
+                my-model-value="{{trailer.condition}}"
+                ng-required="true"
+            >
+                <option value="">Select One</option>
+                <option value="New">New</option>
+                <option value="Used">Used</option>
+                <option value="Cosmetic Damage">Cosmetic Damage</option>
+            </select>
+        </div>
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="inputGroupSelect01"
+                    >Year</label
+                >
+            </div>
+            <select class="year" id="year" ng-model="year" ng-required="true" my-model-value="{{trailer.year}}">
+                <option value="">Select One</option>
+                <option value="2018">2018</option>
+                <option value="2019">2019</option>
+                <option value="2020">2020</option>
+            </select>
+        </div>
+
+        <div
+            class="color form-group"
+            ng-class="{ 'has-error': trailerForm.color.$touched && trailerForm.color.$invalid }"
+            }
+        >
+            <label for="color">Color:</label>
+            <input
+                type="text"
+                class="form-control"
+                id="color"
+                name="color"
+                ng-model="color"
+                my-model-value="{{trailer.color}}"
+                ng-required="true"
+                ng-pattern="regex2"
+            />
+            <span
+                ng-show="trailerForm.color.$touched && trailerForm.color.$invalid"
+                class="help-block"
+                >Invalid Color</span
+            >
+        </div>
+
+        <div
+            class="payload-capacity form-group"
+            ng-class="{ 'has-error': trailerForm.payload.$touched && trailerForm.payload.$invalid }"
+        >
+            <label for="payload-capacity">Payload Capacity:</label>
+            <input
+                type="text"
+                class="form-control"
+                id="payload-capacity"
+                name="payload"
+                ng-model="payload"
+                my-model-value="{{trailer.capacity}}"
+                min="1770"
+                max="6700"
+                ng-required="true"
+                ng-pattern="regex"
+            />
+            <span
+                ng-show="trailerForm.payload.$touched && trailerForm.payload.$invalid"
+                class="help-block"
+                >Capacity must be between 1770-6770</span
+            >
+        </div>
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Amount $:</span>
+            </div>
+            <input
+                type="text"
+                class="form-control"
+                aria-label="Amount"
+                ng-model="amount"
+                my-model-value="{{trailer.price}}"
+                ng-required="true"
+                ng-pattern="regex"
+            />
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="inputGroupSelect01"
+                    >Dimensions</label
+                >
+            </div>
+            <select
+                class="dimensions"
+                id="dimensions"
+                ng-model="dimension"
+                my-model-value="{{trailer.dimension}}"
+                ng-required="true"
+            >
+                <option value="">Select One</option>
+                <option value="6 X 12">6 X 12</option>
+                <option value="7 X 14">7 X 14</option>
+                <option value="8.5 X 16">8.5 X 16</option>
+                <option value="8.5 X 24">8.5 X 24</option>
+            </select>
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="inputGroupSelect01"
+                    >Manufacturer</label
+                >
+            </div>
+            <select
+                class="manufacturer"
+                id="manufacturer"
+                ng-model="manufacturer"
+                my-model-value="{{trailer.manufacturer}}"
+                ng-required="true"
+            >
+                <option value="">Select One</option>
+                <option value="Arising">Arising</option>
+                <option value="Big Tex Trailers">Big Tex Trailers</option>
+                <option value="Little Tex Trailers">Little Tex Trailers</option>
+            </select>
+        </div>
+
+        <div
+            class="quantity form-group"
+            ng-class="{ 'has-error': trailerForm.quantity.$touched && trailerForm.quantity.$invalid }"
+        >
+            <label for="quantity">Quantity:</label>
+            <input
+                type="text"
+                class="form-control"
+                id="quantity"
+                ng-model="quantity"
+                my-model-value="{{trailer.quantity}}"
+                name="quantity"
+                ng-required="true"
+                ng-pattern="regex4"
+            />
+            <span
+                ng-show="trailerForm.quantity.$touched && trailerForm.quantity.$invalid"
+                class="help-block"
+                >Quantity must be between 1-99</span
+            >
+        </div>
+        <input
+            type="submit"
+            value="Submit"
+            class="btn btn-dark col-sm-1"
+            ng-click="submit()"
+            ng-disabled="trailerForm.$invalid"
+        />
+    </form>
+</div>
+
+<!--ng-disabled="trailerForm.$invalid"-->
+
+<!-- <div
     class="container"
     style="margin: 0;
 position: absolute;
@@ -160,7 +355,7 @@ transform: translate(-50%, -50%);"
             <span ng-show="editForm.quantity.$touched && editForm.quantity.$invalid" class="help-block">Quantity must be between 1-99</span>
 
         </div>
-        <br />
+        <br /> -->
         <!-- <input
             type="file"
             id="file"
@@ -191,7 +386,7 @@ transform: translate(-50%, -50%);"
                 >
             </div>
         </div> -->
-        <br />
+        <!-- <br />
         <input type="submit" value="Submit" ng-click="submit()" />
     </form>
-</div>
+</div> -->

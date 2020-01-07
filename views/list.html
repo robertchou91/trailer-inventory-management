@@ -99,7 +99,7 @@
         </thead>
         <tbody class="text-center">
             <tr
-                ng-repeat="trailer in trailers | orderBy : 'title' | filter:searchText | filter:conditionList | filter:manufacturerList | filter:yearList | filter:sizeList | startFrom:pagination.currentPage*pagination.pageSize | limitTo:pagination.pageSize"
+                ng-repeat="trailer in trailers | orderBy:'+':true | filter:searchText | filter:conditionList | filter:manufacturerList | filter:yearList | filter:sizeList | startFrom:pagination.currentPage*pagination.pageSize | limitTo:pagination.pageSize"
             >
                 <td>
                     {{trailer.title}}

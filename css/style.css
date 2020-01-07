@@ -41,7 +41,7 @@ body, html {
     border-radius: 20px;
 }
 
-.btn {
+.btn1 {
     background-color: #6200ee;
     color: white;
     font-size: 20px;
@@ -52,7 +52,8 @@ body, html {
     transition: all .2s ease-in-out;
 }
 
-.btn:hover {
+
+.btn1:hover {
     color: white;
     transform: scale(1.020);
 }
