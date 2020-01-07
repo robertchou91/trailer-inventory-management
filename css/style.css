@@ -45,9 +45,9 @@ body, html {
 
 
 
-
-
-
+input.ng-invalid { 
+    border: 2px red solid;
+}
 
 input.ng-invalid-max {
     border: 2px solid red;

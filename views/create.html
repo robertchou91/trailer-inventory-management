@@ -8,18 +8,21 @@ top: 50%;
 left: 50%;
 transform: translate(-50%, -50%);"
 >
-    <form name="trailerForm" novalidate>
-        <div class="model-number">
+    <form name="trailerForm">
+        <div class="model-number" ng-class="{ 'has-error': trailerForm.modelnum.$touched && trailerForm.modelnum.$invalid }"}>
             <label for="model-number">Model Number:</label>
             <input
                 type="text"
                 class="form-control"
                 id="model-number"
+                name="modelnum"
                 ng-model="modelnum"
-                ng-required="true"
+                required
                 ng-minlength="8"
                 ng-maxlength="8"
+                ng-pattern="regex1"
             />
+            <span ng-show="trailerForm.modelnum.$touched && trailerForm.modelnum.$invalid" class="help-block">Model Number must be 8 characters long and match format (4 Alphanumeric Characters) - (3 Alphanumeric Characters)</span>
         </div>
         <br />
 
@@ -54,28 +57,35 @@ transform: translate(-50%, -50%);"
             </select>
         </div>
 
-        <div class="color">
+        <div class="color"  ng-class="{ 'has-error': trailerForm.color.$touched && trailerForm.color.$invalid }"}>
             <label for="color">Color:</label>
             <input
                 type="text"
                 class="form-control"
                 id="color"
+                name="color"
                 ng-model="color"
                 ng-required="true"
+                ng-pattern="regex2"
             />
+            <span ng-show="trailerForm.color.$touched && trailerForm.color.$invalid" class="help-block">Invalid Color</span>
+
         </div>
 
-        <div class="payload-capacity">
+        <div class="payload-capacity" ng-class="{ 'has-error': trailerForm.payload.$touched && trailerForm.payload.$invalid }">
             <label for="payload-capacity">Payload Capacity:</label>
             <input
                 type="number"
                 class="form-control"
                 id="payload-capacity"
+                name="payload"
                 ng-model="payload"
                 min="1770"
                 max="6700"
                 ng-required="true"
+                ng-pattern="regex3"
             />
+            <span ng-show="trailerForm.payload.$touched && trailerForm.payload.$invalid" class="help-block">Capacity must be between 1770-6770</span>
         </div>
         <br />
 

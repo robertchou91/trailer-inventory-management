@@ -16,6 +16,8 @@ app.controller("loginController", function ($scope, $http, $window) {
 			$window.location.href = '#!/list';
 		}, function (response) {
 			$scope.error = "Username and/or Password are Incorrect";
+			$scope.username ="";
+			$scope.password ="";
 		})
 	}
 
@@ -24,7 +26,7 @@ app.controller("loginController", function ($scope, $http, $window) {
 
 		$window.location.href = '#!/list';
 	}
-
+	
 });
 
 

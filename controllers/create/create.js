@@ -1,6 +1,9 @@
 
 app.controller("myCreate", function ($scope, $http, $window) {
    $scope.regex = '\\d+';
+   $scope.regex1 = '^[a-zA-Z0-9]{4}-[a-zA-Z0-9]{3}$'
+   $scope.regex2 = '^[a-zA-Z-]{1,22}$'
+   $scope.regex3 = '(17[78][0-9]|179[0-9]|1[89][0-9]{2}|[2-5][0-9]{3}|6[0-6][0-9]{2}|6700)'
    $scope.upload = function () {
       var f = document.getElementById('file').files[0];
       var r = new FileReader();
