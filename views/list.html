@@ -100,6 +100,7 @@
         <tbody class="text-center">
             <tr
                 ng-repeat="trailer in trailers | orderBy:'+':true | filter:searchText | filter:conditionList | filter:manufacturerList | filter:yearList | filter:sizeList | startFrom:pagination.currentPage*pagination.pageSize | limitTo:pagination.pageSize"
+                dir-paginate="trailer in trailers|orderBy:sortKey:reverse|filter:search|itemsPerPage:5"
             >
                 <td>
                     {{trailer.title}}
@@ -144,4 +145,9 @@
     >
         Next
     </button>
+    <dir-pagination-controls
+        max-size="5"
+        direction-links="true"
+        boundary-links="true" >
+    </dir-pagination-controls>
 </div>
