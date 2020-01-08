@@ -3,6 +3,13 @@ $('.navbar-nav li a').on('click', function() {
     $(this).parent().addClass('active');
 });
 
+$('.list').on('click', function() {
+  $(this).parent().find('.active').removeClass('active');
+  $('.list').addClass('active');
+});
+
+
+
 
 $(document).ready(function() {
     $(window).scroll(function() {
