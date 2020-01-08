@@ -1,4 +1,5 @@
 <div class="container my-5">
+    <h1>Edit Trailer</h1>
     <form name="trailerForm">
         <div
             class="model-number form-group"
@@ -107,7 +108,10 @@
         </div>
 
         <div class="input-group mb-3">
-            <div class="input-group-prepend">
+            <div 
+                class="input-group-prepend"
+                ng-class="{ 'has-error': trailerForm.amount.$touched && trailerForm.amount.$invalid }"
+            >
                 <span class="input-group-text">Amount $:</span>
             </div>
             <input
@@ -115,10 +119,18 @@
                 class="form-control"
                 aria-label="Amount"
                 ng-model="amount"
+                name="amount"
+                min="1"
+                max="3000"
                 my-model-value="{{trailer.price}}"
                 ng-required="true"
                 ng-pattern="regex"
             />
+            <span
+                ng-show="trailerForm.amount.$touched && trailerForm.amount.$invalid"
+                class="help-block col-sm-12"
+                >Amount must be between 1-3000</span
+            >
         </div>
         <div class="input-group mb-3">
             <div class="input-group-prepend">

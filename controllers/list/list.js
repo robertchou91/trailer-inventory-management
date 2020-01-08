@@ -57,6 +57,7 @@ app.controller('listController', function ($scope, $window, $http) {
         { "year": "2020" },
     ];
 
+
     $scope.pagination = {
         currentPage: 0,
         pageSize: 25,
@@ -64,6 +65,7 @@ app.controller('listController', function ($scope, $window, $http) {
             return Math.ceil($scope.trailers.length / $scope.pagination.pageSize);
         }
     };
+
 
     if (sessionStorage.userIn != "true") {
         $window.location.href = '/';

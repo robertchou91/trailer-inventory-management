@@ -120,7 +120,7 @@
                 <td>{{trailer.capacity}}</td>
                 <td>{{trailer.manufacturer}}</td>
                 <td>{{trailer.condition}}</td>
-                <td>{{trailer.price}}</td>
+                <td>${{trailer.price}}</td>
                 <td>{{trailer.quantity}}</td>
                 <td><a href="#!/edit/{{trailer._id}}">Edit</a></td>
                 <td><a href="" ng-click="delete(trailer._id)">Delete</a></td>
@@ -128,7 +128,7 @@
         </tbody>
     </table>
     <select ng-model="pagination.pageSize">
-        <option value="25" selected="selected">25</option>
+        <option value="25" selected>25</option>
         <option value="50">50</option>
         <option value="100">100</option>
     </select>
