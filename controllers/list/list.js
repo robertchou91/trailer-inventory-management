@@ -57,14 +57,16 @@ app.controller('listController', function ($scope, $window, $http) {
         { "year": "2020" },
     ];
 
+    $scope.currentPage = 1;
+    $scope.pageSize = 25;
 
-    $scope.pagination = {
-        currentPage: 0,
-        pageSize: 25,
-        numberOfPages: function () {
-            return Math.ceil($scope.trailers.length / $scope.pagination.pageSize);
-        }
-    };
+    // $scope.pagination = {
+    //     currentPage: 0,
+    //     pageSize: 25,
+    //     numberOfPages: function () {
+    //         return Math.ceil($scope.trailers.length / $scope.pagination.pageSize);
+    //     }
+    // };
 
 
     if (sessionStorage.userIn != "true") {
@@ -75,15 +77,24 @@ app.controller('listController', function ($scope, $window, $http) {
 });
 
 
-app.filter('startFrom', function () {
-    if (typeof input === undefined) {
-        return null;
-    } else {
-        return function (input, start) {
-            start = +start; //parse to int
-            return input.slice(start);
-        }
-    }
-});
+// app.filter('startFrom', function () {
+//     if (typeof input === undefined) {
+//         return null;
+//     } else {
+//         return function (input, start) {
+//             start = +start; //parse to int
+//             return input.slice(start);
+//         }
+//     }
+// });
 
+
+app.filter('start', function () {
+    return function (input, start) {
+        if (!input || !input.length) { return; }
+ 
+        start = +start;
+        return input.slice(start);
+    };
+});
 

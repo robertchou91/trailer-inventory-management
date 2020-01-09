@@ -1,34 +1,30 @@
-body, html {
+body,
+html {
     height: 100%;
 }
-
-
 
 /* Navbar CSS */
 .navbar-custom {
     background-color: #6200ee !important;
     border-bottom: 1px solid #3700b3;
     -webkit-box-shadow: 0px 5px 5px 0px rgba(50, 50, 50, 0.12);
-	-moz-box-shadow:    0px 5px 5px 0px rgba(50, 50, 50, 0.12);
-	box-shadow:         0px 5px 5px 0px rgba(50, 50, 50, 0.12);
+    -moz-box-shadow: 0px 5px 5px 0px rgba(50, 50, 50, 0.12);
+    box-shadow: 0px 5px 5px 0px rgba(50, 50, 50, 0.12);
 }
-
 
 .container-fluid {
     height: 100vh;
 }
 
-
-
 /* Login CSS */
 .login {
-    
     background-image: linear-gradient(
-        to right bottom,
-        rgba(55, 0, 179, 0.7),
-        rgba(98, 0, 238, 0.7)),
+            to right bottom,
+            rgba(55, 0, 179, 0.7),
+            rgba(98, 0, 238, 0.7)
+        ),
         url("../img/trailertruck.jpeg");
-    
+
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -36,8 +32,8 @@ body, html {
 
 .card {
     -webkit-box-shadow: 0px 10px 20px 0px rgba(50, 50, 50, 0.92);
-	-moz-box-shadow:    0px 10px 20px 0px rgba(50, 50, 50, 0.92);
-    box-shadow:         0px 10px 20px 0px rgba(50, 50, 50, 0.92);
+    -moz-box-shadow: 0px 10px 20px 0px rgba(50, 50, 50, 0.92);
+    box-shadow: 0px 10px 20px 0px rgba(50, 50, 50, 0.92);
     border-radius: 20px;
 }
 
@@ -47,17 +43,15 @@ body, html {
     font-size: 20px;
     border-radius: 20px;
     -webkit-box-shadow: 0px 5px 5px 0px rgba(50, 50, 50, 0.12);
-	-moz-box-shadow:    0px 5px 5px 0px rgba(50, 50, 50, 0.12);
-    box-shadow:         0px 5px 5px 0px rgba(50, 50, 50, 0.12);
-    transition: all .2s ease-in-out;
+    -moz-box-shadow: 0px 5px 5px 0px rgba(50, 50, 50, 0.12);
+    box-shadow: 0px 5px 5px 0px rgba(50, 50, 50, 0.12);
+    transition: all 0.2s ease-in-out;
 }
-
 
 .btn1:hover {
     color: white;
-    transform: scale(1.020);
+    transform: scale(1.02);
 }
-
 
 /* List Page CSS */
 
@@ -66,11 +60,14 @@ body, html {
     color: white;
 }
 
-
+img {
+    width: 100px;
+    height: 100px;
+}
 
 /* Validations */
 
-input.ng-invalid.ng-touched { 
+input.ng-invalid.ng-touched {
     border: 2px red solid;
 }
 
@@ -78,7 +75,7 @@ input.ng-invalid-max {
     border: 2px solid red;
 }
 
-input[disabled = "disabled"] {
+input[disabled="disabled"] {
     opacity: 0.4;
     cursor: not-allowed;
 }
@@ -91,8 +88,6 @@ input[disabled = "disabled"] {
 span {
     color: red;
 }
-
-
 
 /* Scroll to Top */
 
@@ -110,9 +105,9 @@ span {
     -moz-border-radius: 5px;
     border-radius: 5px;
     z-index: 1;
-  }
-  
-  #scroll span {
+}
+
+#scroll span {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -121,12 +116,61 @@ span {
     height: 0;
     width: 0;
     border: 8px solid transparent;
-    border-bottom-color: #ffffff
-  }
-  
-  #scroll:hover {
+    border-bottom-color: #ffffff;
+}
+
+#scroll:hover {
     background-color: #3700b3;
     opacity: 1;
     filter: "alpha(opacity=100)";
     -ms-filter: "alpha(opacity=100)";
-  }
+}
+
+
+
+/* Pagination CSS  */
+
+.pagination > li {
+    display: inline;
+}
+.pagination > li > a,
+.pagination > li > span {
+    position: relative;
+    float: left;
+    padding: 6px 12px;
+    line-height: 1.42857143;
+    text-decoration: none;
+    color: #000;
+    background-color: #fff;
+    margin-left: -1px;
+}
+.pagination > li > a:hover,
+.pagination > li > span:hover,
+.pagination > li > a:focus,
+.pagination > li > span:focus {
+    background-color: #eee;
+    border-color: #ddd;
+}
+.pagination > .active > a,
+.pagination > .active > span,
+.pagination > .active > a:hover,
+.pagination > .active > span:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span:focus {
+    z-index: 2;
+    color: #000;
+    background-color: lightgrey;
+    border-color: #fff;
+    cursor: default;
+}
+.pagination > .disabled > span,
+.pagination > .disabled > span:hover,
+.pagination > .disabled > span:focus,
+.pagination > .disabled > a,
+.pagination > .disabled > a:hover,
+.pagination > .disabled > a:focus {
+    color: #999;
+    background-color: #fff;
+    border-color: #ddd;
+    cursor: not-allowed;
+}

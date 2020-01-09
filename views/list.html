@@ -99,32 +99,31 @@
         </thead>
         <tbody class="text-center">
             <tr
-                ng-repeat="trailer in trailers | orderBy:'+':true | filter:searchText | filter:conditionList | filter:manufacturerList | filter:yearList | filter:sizeList | startFrom:pagination.currentPage*pagination.pageSize | limitTo:pagination.pageSize"
-                dir-paginate="trailer in trailers|orderBy:sortKey:reverse|filter:search|itemsPerPage:5"
+                ng-repeat="trailer in trailers | orderBy:'+':true | filter:searchText | filter:conditionList | filter:manufacturerList | filter:yearList | filter:sizeList | start: (currentPage - 1) * pageSize | limitTo: pageSize"
             >
-                <td>
+                <td class="align-middle">
                     {{trailer.title}}
                     <br />
                     {{trailer.manufacturer}}
                 </td>
-                <td>
+                <td class="align-middle">
                     <img
                         class="img-thumbnail"
                         data-ng-src="data:image/png;base64,{{trailer.image.data}}"
                         alt="Trailer Image"
                     />
                 </td>
-                <td>{{trailer.model}}</td>
-                <td>{{trailer.dimension}}</td>
-                <td>{{trailer.year}}</td>
-                <td>{{trailer.color}}</td>
-                <td>{{trailer.capacity}}</td>
-                <td>{{trailer.manufacturer}}</td>
-                <td>{{trailer.condition}}</td>
-                <td>${{trailer.price}}</td>
-                <td>{{trailer.quantity}}</td>
-                <td><a href="#!/edit/{{trailer._id}}">Edit</a></td>
-                <td><a href="" ng-click="delete(trailer._id)">Delete</a></td>
+                <td class="align-middle">{{trailer.model}}</td>
+                <td class="align-middle">{{trailer.dimension}}</td>
+                <td class="align-middle">{{trailer.year}}</td>
+                <td class="align-middle">{{trailer.color}}</td>
+                <td class="align-middle">{{trailer.capacity}}</td>
+                <td class="align-middle">{{trailer.manufacturer}}</td>
+                <td class="align-middle">{{trailer.condition}}</td>
+                <td class="align-middle">${{trailer.price}}</td>
+                <td class="align-middle">{{trailer.quantity}}</td>
+                <td class="align-middle"><a href="#!/edit/{{trailer._id}}">Edit</a></td>
+                <td class="align-middle"><a href="" ng-click="delete(trailer._id)">Delete</a></td>
             </tr>
         </tbody>
     </table>
@@ -133,7 +132,7 @@
         <option value="50">50</option>
         <option value="100">100</option>
     </select> -->
-    <button
+    <!-- <button
         ng-disabled="pagination.currentPage == 0"
         ng-click="pagination.currentPage=pagination.currentPage-1"
     >
@@ -144,10 +143,6 @@
         ng-click="pagination.currentPage=pagination.currentPage+1"
     >
         Next
-    </button>
-    <dir-pagination-controls
-        max-size="5"
-        direction-links="true"
-        boundary-links="true" >
-    </dir-pagination-controls>
+    </button> -->
+    <pagination total-items="trailers.length" items-per-page="pageSize" ng-model="currentPage" max-size="5" class="pagination-sm"></pagination>
 </div>
