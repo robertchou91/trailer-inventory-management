@@ -76,7 +76,7 @@
             <span
                 ng-show="trailerForm.color.$touched && trailerForm.color.$invalid"
                 class="help-block"
-                >Field can not be empty</span
+                >Invalid Color</span
             >
         </div>
 
@@ -207,6 +207,7 @@
         <input
             type="submit"
             value="Submit"
+            id="btnclick"
             class="btn btn-dark col-sm-1"
             ng-click="submit()"
             ng-disabled="trailerForm.$invalid"

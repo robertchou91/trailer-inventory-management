@@ -1,6 +1,6 @@
 $('.navbar-nav li a').on('click', function() {
     $(this).parent().parent().find('.active').removeClass('active');
-    $(this).parent().addClass('active');
+    $(this).addClass('active');
 });
 
 $('.list').on('click', function() {
@@ -8,7 +8,10 @@ $('.list').on('click', function() {
   $('.list').addClass('active');
 });
 
-
+$(document).on("click", "#btnclick", function() {
+  $('.create').parent().find('.active').removeClass('active');
+  $('.list').addClass('active');
+});
 
 
 $(document).ready(function() {
