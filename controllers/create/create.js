@@ -36,7 +36,7 @@ app.controller("createController", function ($scope, $http, $window) {
 
       }
 
-      $http.post('https://cargo-trailer-server.herokuapp.com/api/trailers/', (data)).then(function (response) {
+      $http.post('https://cargo-server-testing.herokuapp.com/api/trailers/', (data)).then(function (response) {
 
          if (response.data)
 
