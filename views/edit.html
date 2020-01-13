@@ -193,6 +193,16 @@
                 >Quantity must be between 1-99</span
             >
         </div>
+        <div class="form-group">
+            <label for="uploadFile">Upload Image:</label>
+            <input
+                type="file"
+                id="file"
+                name="file"
+                onchange="angular.element(this).scope().upload(this)"
+                class="form-control-file"
+            />
+        </div>
         <input
             type="submit"
             value="Submit"
