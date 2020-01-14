@@ -22,7 +22,7 @@ app.controller("createController", function ($scope, $http, $window) {
    $scope.submit = function () {
       var data = {
 
-         title: $scope.modelnum,
+         title: $scope.modelnum + " " + $scope.manufacturer,
          image: $scope.image,
          manufacturer: $scope.manufacturer,
          price: $scope.amount,
