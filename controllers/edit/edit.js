@@ -18,7 +18,7 @@ app.controller('editController', function ($scope, $http, $routeParams, $window)
     }
 
     $scope.getById = function () {
-        $http.get("https://cargo-server-testing.herokuapp.com/api/trailers/" + id)
+        $http.get("https://cargo-trailer-server.herokuapp.com/api/trailers/" + id)
             .then(function (response) {
                 // console.log(response);
                 $scope.trailer = response.data;
@@ -45,7 +45,7 @@ app.controller('editController', function ($scope, $http, $routeParams, $window)
         }
 
 
-        $http.put('https://cargo-server-testing.herokuapp.com/api/trailers/' + id, (data)).then(function (response) {
+        $http.put('https://cargo-trailer-server.herokuapp.com/api/trailers/' + id, (data)).then(function (response) {
 
             if (response.data)
 
