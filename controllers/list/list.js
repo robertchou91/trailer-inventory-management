@@ -3,7 +3,7 @@ app.controller('listController', function ($scope, $window, $http) {
     // $scope.userLoggedIn = true;
     // $scope.userLoggedIn = sessionStorage.getItem("userIn");;
     console.log($scope.userLoggedIn);
-    $http.get("https://cargo-trailer-server.herokuapp.com/api/trailers")
+    $http.get("https://cargo-server-production.herokuapp.com/api/trailers")
         .then(function (response) {
             console.log("Successfully got Trailers");
             $scope.trailers = response.data;
@@ -14,7 +14,7 @@ app.controller('listController', function ($scope, $window, $http) {
 
     $scope.delete = function (id) {
         $http({
-            url: 'https://cargo-trailer-server.herokuapp.com/api/trailers/' + id,
+            url: 'https://cargo-server-production.herokuapp.com/api/trailers/' + id,
             method: 'DELETE',
         }).then(function (response) {
             console.log("trailer deleted");
@@ -26,7 +26,7 @@ app.controller('listController', function ($scope, $window, $http) {
     };
 
     $scope.refresh = function () {
-        $http.get('https://cargo-trailer-server.herokuapp.com/api/trailers/')
+        $http.get('https://cargo-server-production.herokuapp.com/api/trailers/')
             .then(function (response) {
                 $scope.trailers = response.data;
             });
