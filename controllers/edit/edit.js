@@ -40,7 +40,7 @@ app.controller('editController', function ($scope, $http, $routeParams, $window)
             condition: $scope.condition,
             color: $scope.color,
             year: $scope.year,
-            quantity: $scope.quantity
+            // quantity: $scope.quantity
 
         }
 

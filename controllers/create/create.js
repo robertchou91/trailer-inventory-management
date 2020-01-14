@@ -32,7 +32,7 @@ app.controller("createController", function ($scope, $http, $window) {
          condition: $scope.condition,
          color: $scope.color,
          year: $scope.year,
-         quantity: $scope.quantity
+         // quantity: $scope.quantity
 
       }
 
