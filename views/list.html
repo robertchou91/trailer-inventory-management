@@ -102,7 +102,7 @@
                 ng-repeat="trailer in trailers | orderBy:'+':true | filter:searchText | filter:conditionList | filter:manufacturerList | filter:yearList | filter:sizeList | start: (currentPage - 1) * pageSize | limitTo: pageSize"
             >
                 <td class="align-middle">
-                    {{trailer.title}}
+                    {{trailer.model}}
                     <br />
                     {{trailer.manufacturer}}
                 </td>
